@@ -27,7 +27,7 @@ const DUMMY_DATA = [
 
 const PortfolioSection = () => {
   return (
-    <section>
+    <section id='portafolio'>
       <h2>Portafolio</h2>
       <div>
         {DUMMY_DATA.map((proyecto) => (

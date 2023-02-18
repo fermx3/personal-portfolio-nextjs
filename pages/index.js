@@ -4,6 +4,7 @@ import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
 import SkillsSection from '@/components/homePage/skills-section';
 import PortfolioSection from '@/components/homePage/portfolio-section';
+import ContactSection from '@/components/homePage/contact-section';
 
 export default function Home() {
   return (
@@ -15,10 +16,10 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      {/* Inyectar aquí navbar con un div en el documento? */}
       <SkillsSection />
       <PortfolioSection />
-      {/* Inyectar aquí navbar con un div en el documento? */}
-      {/* <h2>Contacto: Cómo sería tu web ideal?</h2> */}
+      <ContactSection />
     </>
   );
 }
