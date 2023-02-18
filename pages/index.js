@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
 import SkillsSection from '@/components/homePage/skills-section';
+import PortfolioSection from '@/components/homePage/portfolio-section';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <Header />
       <SkillsSection />
+      <PortfolioSection />
       {/* Inyectar aquí navbar con un div en el documento? */}
       {/* <h2>Contacto: Cómo sería tu web ideal?</h2> */}
     </>
