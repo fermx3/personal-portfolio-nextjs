@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { gql, request } from 'graphql-request';
 
 import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
@@ -6,7 +7,7 @@ import SkillsSection from '@/components/homePage/skills-section';
 import PortfolioSection from '@/components/homePage/portfolio-section';
 import ContactSection from '@/components/homePage/contact-section';
 
-export default function Home() {
+export default function Home({ proyectos }) {
   return (
     <>
       <Head>
@@ -18,8 +19,35 @@ export default function Home() {
       <Header />
       {/* Inyectar aquí navbar con un div en el documento? */}
       <SkillsSection />
-      <PortfolioSection />
+      <PortfolioSection proyectos={proyectos} />
       <ContactSection />
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const hygraphAPI = process.env.URL;
+
+  const query = gql`
+    query MyQuery {
+      proyectos {
+        descripcion
+        id
+        img
+        subtitulo
+        tecnologias
+        titulo
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query);
+
+  const { proyectos } = result;
+
+  return {
+    props: {
+      proyectos,
+    },
+  };
+};

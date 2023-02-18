@@ -14,7 +14,12 @@ const ProyectoItem = ({ proyecto }) => {
       </div>
       <div>{descripcion}</div>
       <div>
-        <Image src={img} alt={titulo} height={300} width={600} />
+        <Image
+          src={`/images/proyectos/${img}.jpg`}
+          alt={titulo}
+          height={300}
+          width={600}
+        />
       </div>
     </div>
   );

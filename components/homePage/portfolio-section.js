@@ -1,3 +1,4 @@
+import { request, gql, GraphQLClient } from 'graphql-request';
 import ProyectoItem from '../portfolio/proyecto-item';
 
 const DUMMY_DATA = [
@@ -25,12 +26,13 @@ const DUMMY_DATA = [
   },
 ];
 
-const PortfolioSection = () => {
+const PortfolioSection = ({ proyectos }) => {
+  console.log(proyectos);
   return (
     <section id='portafolio'>
       <h2>Portafolio</h2>
       <div>
-        {DUMMY_DATA.map((proyecto) => (
+        {proyectos.map((proyecto) => (
           <ProyectoItem key={proyecto.titulo} proyecto={proyecto} />
         ))}
       </div>
