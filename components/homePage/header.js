@@ -8,27 +8,23 @@ const Header = () => {
         <h1>¡Hola! soy Fernando Rios</h1>
         <h2>Desarrollador Web FullStack</h2>
         <p>
-          Soy un desarrollador web full stack especializado en React.js y SEO,
-          comprometido en crear aplicaciones web dinámicas y optimizadas para
-          motores de búsqueda que satisfagan las necesidades de mis clientes y
-          usuarios. Mi objetivo es proporcionar soluciones de alta calidad y
-          ayudarles a llevar su visión al siguiente nivel en línea.
+          Soy un desarrollador web full stack especializado en React.js,
+          WordPress y SEO, comprometido en crear aplicaciones web dinámicas y
+          optimizadas para motores de búsqueda que satisfagan las necesidades de
+          mis clientes y usuarios. Mi objetivo es proporcionar soluciones de
+          alta calidad y ayudarles a llevar su visión al siguiente nivel en
+          línea.
         </p>
         <div>
+          <Icon src='/images/icons/languajes/nextjs.svg' caption='next.js' />
+          <Icon src='/images/icons/languajes/react.svg' caption='react.js' />
           <Icon
-            src='/images/icons/react-icon.svg'
-            alt='react.js'
-            caption='react.js'
+            src='/images/icons/languajes/javascript.svg'
+            caption='JavaScript'
           />
           <Icon
-            src='/images/icons/js-icon.svg'
-            alt='javascript'
-            caption='javascript'
-          />
-          <Icon
-            src='/images/icons/wordpress-icon.svg'
-            alt='wordpress'
-            caption='wordpress'
+            src='/images/icons/languajes/wordpress.svg'
+            caption='WordPress'
           />
         </div>
       </div>

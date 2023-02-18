@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
+import SkillsSection from '@/components/homePage/skills-section';
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      <SkillsSection />
+      {/* Inyectar aquí navbar con un div en el documento? */}
+      {/* <h2>Contacto: Cómo sería tu web ideal?</h2> */}
     </>
   );
 }
