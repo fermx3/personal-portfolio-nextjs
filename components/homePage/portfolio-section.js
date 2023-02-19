@@ -3,7 +3,6 @@ import Link from 'next/link';
 import ProyectoItem from '../portfolio/proyecto-item';
 
 const PortfolioSection = ({ proyectos }) => {
-  console.log(proyectos);
   return (
     <section id='portafolio'>
       <h2>Portafolio</h2>
