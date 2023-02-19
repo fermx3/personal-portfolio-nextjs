@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import { gql, request } from 'graphql-request';
 
 import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
 import SkillsSection from '@/components/homePage/skills-section';
 import PortfolioSection from '@/components/homePage/portfolio-section';
 import ContactSection from '@/components/homePage/contact-section';
+import { getFeaturedProyectos } from '@/helpers/db-utils';
 
 export default function Home({ proyectos }) {
   return (
@@ -26,28 +26,11 @@ export default function Home({ proyectos }) {
 }
 
 export const getStaticProps = async () => {
-  const hygraphAPI = process.env.URL;
-
-  const query = gql`
-    query MyQuery {
-      proyectos {
-        descripcion
-        id
-        img
-        subtitulo
-        tecnologias
-        titulo
-      }
-    }
-  `;
-
-  const result = await request(hygraphAPI, query);
-
-  const { proyectos } = result;
+  const featuredProyectos = await getFeaturedProyectos();
 
   return {
     props: {
-      proyectos,
+      proyectos: featuredProyectos,
     },
   };
 };
