@@ -3,6 +3,23 @@ export default function handler(req, res) {
     return;
   }
 
+  const { nombre, email, mensaje } = req.body;
+
+  if (
+    !nombre ||
+    nombre.trim() === '' ||
+    !email ||
+    email.trim() === '' ||
+    !email.includes('@') ||
+    !mensaje ||
+    mensaje.trim() === ''
+  ) {
+    res
+      .status(422)
+      .json({ message: 'Entrada invalida. Por favor intenta de nuevo.' });
+    return;
+  }
+
   async function main() {
     let nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({

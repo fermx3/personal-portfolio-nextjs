@@ -4,9 +4,11 @@ const hygraphAPI = process.env.URL;
 
 export async function getAllProyectos() {
   const query = gql`
-    query MyQuery {
-      proyectos(first: 4) {
-        descripcion
+    query AllProyectos {
+      proyectos(first: 4, orderBy: createdAt_DESC) {
+        desc {
+          markdown
+        }
         id
         img
         subtitulo
@@ -25,9 +27,11 @@ export async function getAllProyectos() {
 
 export async function getMoreProyectos(lastPost) {
   const query = gql`
-    query MyQuery($skip: Int = ${lastPost}) {
-      proyectos(skip: $skip) {
-        descripcion
+    query MoreProyectos($skip: Int = ${lastPost}) {
+      proyectos(skip: $skip, first: 4, orderBy: createdAt_DESC) {
+        desc {
+          markdown
+          }
         id
         img
         subtitulo
@@ -46,9 +50,15 @@ export async function getMoreProyectos(lastPost) {
 
 export async function getFeaturedProyectos() {
   const query = gql`
-    query MyQuery {
-      proyectos(where: { isFeatured: true }, first: 4) {
-        descripcion
+    query FeaturedProyectos {
+      proyectos(
+        where: { isFeatured: true }
+        first: 4
+        orderBy: createdAt_DESC
+      ) {
+        desc {
+          markdown
+        }
         id
         img
         subtitulo

@@ -46,6 +46,7 @@ const Header = () => {
           alt='Fernando Rios Desarrollador Web'
           width={300}
           height={300}
+          priority
         />
       </div>
     </header>

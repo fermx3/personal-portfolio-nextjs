@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const ProyectoItem = ({ proyecto }) => {
-  const { titulo, subtitulo, tecnologias, descripcion, img } = proyecto;
+  const { titulo, subtitulo, tecnologias, descripcion, img, desc } = proyecto;
 
   return (
     <div>
@@ -12,7 +13,7 @@ const ProyectoItem = ({ proyecto }) => {
           <p key={tecnologia}>{tecnologia}</p>
         ))}
       </div>
-      <div>{descripcion}</div>
+      <div>{desc && <ReactMarkdown>{desc.markdown}</ReactMarkdown>}</div>
       <div>
         <Image
           src={`/images/proyectos/${img}.jpg`}

@@ -7,8 +7,11 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formFeedback, setFormFeedback] = useState();
 
+  //Agregar useEffect para quitar notificaciones despues de 5 seg
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormFeedback();
     setIsLoading(true);
 
     const response = await fetch('/api/contact', {
