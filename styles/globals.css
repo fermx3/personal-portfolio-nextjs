@@ -12,7 +12,7 @@
   --shadow-nav-color: 195, 174, 178;
   --shadow-pic-color: 179, 70, 73;
   --shadow-card-color: 71, 89, 117;
-  --shadow: 71, 89, 117;
+  --shadow-btn-color: 26, 6, 43;
 
   /* Transparencias */
   --nav-transparency: 0.7;
@@ -27,7 +27,9 @@
   --size-6: 4rem;
   --size-7: 5rem;
 
+  /* buttons */
   --button-font-size: 1.125rem;
+  --sm-button-font-size: 0.75rem;
 
   /* ZIndex */
   --z-0: 1;

@@ -1,0 +1,7 @@
+.grid {
+  display: grid;
+  grid-template-columns: min(1200px, 100%);
+  justify-content: center;
+  row-gap: var(--size-7);
+  margin-bottom: var(--size-7);
+}

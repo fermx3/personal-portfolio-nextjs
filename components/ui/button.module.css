@@ -1,5 +1,4 @@
 .button {
-  display: block;
   font-size: var(--button-font-size);
   background: var(--color-2);
   color: var(--color-0);
@@ -7,4 +6,28 @@
   width: fit-content;
   padding: 18px 32px;
   border-radius: var(--border-radius);
+  transition: all 0.5s ease-in;
+}
+
+.button:hover,
+.button a:hover {
+  cursor: pointer;
+  /* box-shadow: 0px 2px 10px rgba(var(--shadow-btn-color), 0.2),
+    0px 4px 20px rgba(var(--shadow-btn-color), 0.3),
+    0px 0px 0px 3px rgb(255, 255, 255); */
+  background: linear-gradient(145deg, #ff5e64, #db4f54);
+  box-shadow: 5px 5px 25px #d64d52, -5px -5px 25px #ff6368;
+  transition: all 0.5s ease-in;
+}
+
+.small {
+  font-size: var(--sm-button-font-size);
+  background: var(--color-4);
+  padding: 9px 16px;
+}
+
+.small:hover {
+  background: linear-gradient(145deg, #3a046e, #31045d);
+  box-shadow: 0px 2px 10px rgba(var(--shadow-btn-color), 0.2),
+    0px 4px 20px rgba(var(--shadow-btn-color), 0.3);
 }

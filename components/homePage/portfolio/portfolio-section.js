@@ -1,17 +1,13 @@
-import { request, gql, GraphQLClient } from 'graphql-request';
-import Link from 'next/link';
-import ProyectoItem from './proyecto-item';
+import classes from './portfolio-section.module.css';
+import ProyectoGrid from './proyecto-grid';
+import Button from '@/components/ui/button';
 
 const PortfolioSection = ({ proyectos }) => {
   return (
-    <section id='portafolio'>
+    <section id='portafolio' className={classes.portafolio}>
       <h2>Portafolio</h2>
-      <div>
-        {proyectos.map((proyecto) => (
-          <ProyectoItem key={proyecto.id} proyecto={proyecto} />
-        ))}
-      </div>
-      <Link href='/portafolio'>Ver más</Link>
+      <ProyectoGrid proyectos={proyectos} />
+      <Button href='/portafolio'>Ver más</Button>
     </section>
   );
 };

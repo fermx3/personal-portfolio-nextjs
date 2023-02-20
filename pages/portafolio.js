@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { getAllProyectos } from '@/helpers/db-utils';
 
-import ProyectoItem from '@/components/homePage/portfolio/proyecto-item';
+import ProyectoGrid from '@/components/homePage/portfolio/proyecto-grid';
+
+import classes from '../styles/Portafolio.module.css';
 
 const Portafolio = (props) => {
   const [proyectos, setProyectos] = useState(props.proyectos);
@@ -22,11 +24,9 @@ const Portafolio = (props) => {
   };
 
   return (
-    <section>
+    <section className={classes.portafolio}>
       <h1>Portafolio</h1>
-      {proyectos.map((proyecto) => (
-        <ProyectoItem key={proyecto.id} proyecto={proyecto} />
-      ))}
+      <ProyectoGrid proyectos={proyectos} />
       <button onClick={handleClick}>Ver más proyectos</button>
     </section>
   );
