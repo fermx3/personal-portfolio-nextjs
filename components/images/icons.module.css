@@ -1,0 +1,12 @@
+.icon {
+  text-align: center;
+  margin: var(--size-0);
+}
+
+.icon figcaption {
+  font-size: var(--size-1);
+}
+
+.icon p {
+  font-size: var(--size-0);
+}

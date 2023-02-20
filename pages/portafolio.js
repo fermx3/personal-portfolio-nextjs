@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { getAllProyectos } from '@/helpers/db-utils';
 
-import ProyectoItem from '@/components/portfolio/proyecto-item';
+import ProyectoItem from '@/components/homePage/portfolio/proyecto-item';
 
 const Portafolio = (props) => {
   const [proyectos, setProyectos] = useState(props.proyectos);

@@ -3,7 +3,7 @@ import Icon from '../images/icon';
 
 const ContactSection = () => {
   return (
-    <section>
+    <section id='contacto'>
       <h2>Cómo sería tu web ideal?</h2>
       <h3>Cuentame para hacerla realidad.</h3>
       <div>

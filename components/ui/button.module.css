@@ -1,0 +1,10 @@
+.button {
+  display: block;
+  font-size: var(--button-font-size);
+  background: var(--color-2);
+  color: var(--color-0);
+  font-weight: 600;
+  width: fit-content;
+  padding: 18px 32px;
+  border-radius: var(--border-radius);
+}

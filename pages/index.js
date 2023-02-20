@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
-import SkillsSection from '@/components/homePage/skills-section';
-import PortfolioSection from '@/components/homePage/portfolio-section';
+import SkillsSection from '@/components/homePage/skills/skills-section';
+import PortfolioSection from '@/components/homePage/portfolio/portfolio-section';
 import ContactSection from '@/components/homePage/contact-section';
 import { getFeaturedProyectos } from '@/helpers/db-utils';
 

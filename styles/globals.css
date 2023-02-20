@@ -1,10 +1,45 @@
 :root {
   --max-width: 1100px;
+  --max-width-half: 500px;
+  --max-width-card: 300px;
   --border-radius: 12px;
 
   --foreground-rgb: 43, 43, 43;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 243, 231, 233;
+  --background-middle-rgb: 227, 238, 255;
+  --background-end-rgb: 227, 238, 255;
+
+  --shadow-nav-color: 195, 174, 178;
+  --shadow-pic-color: 179, 70, 73;
+  --shadow-card-color: 71, 89, 117;
+  --shadow: 71, 89, 117;
+
+  /* Transparencias */
+  --nav-transparency: 0.7;
+
+  /* Sizes */
+  --size-0: 0.75rem;
+  --size-1: 0.875rem;
+  --size-2: 1rem;
+  --size-3: 1.5rem;
+  --size-4: 2rem;
+  --size-5: 3rem;
+  --size-6: 4rem;
+  --size-7: 5rem;
+
+  --button-font-size: 1.125rem;
+
+  /* ZIndex */
+  --z-0: 1;
+  --z-1: 2;
+
+  /* colors */
+  --color-0: rgb(243, 247, 253);
+  --color-1: rgb(164, 191, 254);
+  --color-2: rgb(243, 88, 93);
+  --color-3: rgb(49, 74, 150);
+  --color-4: rgb(54, 4, 103);
+  --color-5: rgb(43, 43, 43);
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -86,9 +121,9 @@ body {
   color: rgb(var(--foreground-rgb));
   background-image: linear-gradient(
     to top,
-    #f3e7e9 0%,
-    #e3eeff 99%,
-    #e3eeff 100%
+    rgb(var(--background-start-rgb)) 0%,
+    rgb(var(--background-middle-rgb)) 99%,
+    rgb(var(--background-end-rgb)) 100%
   );
 }
 

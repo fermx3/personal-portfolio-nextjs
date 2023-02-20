@@ -1,0 +1,66 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), auto));
+  justify-content: center;
+  padding: var(--size-7) var(--size-3);
+}
+
+/* .header::before {
+  content: '';
+  background-image: url(/images/mesh-gradient.png);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+} */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  z-index: var(--z-0);
+}
+
+.title {
+  margin-bottom: var(--size-3);
+}
+
+.title h1 {
+  font-size: var(--size-5);
+}
+
+.profile p {
+  max-width: var(--max-width-half);
+  margin-bottom: var(--size-3);
+}
+
+.icons {
+  display: flex;
+}
+
+.profileImage {
+  position: relative;
+  right: 30px;
+  text-align: center;
+  margin-top: var(--size-2);
+}
+
+.profileImage img {
+  position: relative;
+  filter: drop-shadow(2px -2px 10px rgba(var(--shadow-pic-color), 0.3));
+}
+
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  background: linear-gradient(
+    120deg,
+    var(--color-1) 0%,
+    rgb(246, 128, 132) 100%
+  );
+  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+}

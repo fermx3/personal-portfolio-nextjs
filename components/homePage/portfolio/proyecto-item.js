@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const ProyectoItem = ({ proyecto }) => {
-  const { titulo, subtitulo, tecnologias, descripcion, img, desc } = proyecto;
+  const { titulo, subtitulo, tecnologias, img, desc } = proyecto;
 
   return (
     <div>

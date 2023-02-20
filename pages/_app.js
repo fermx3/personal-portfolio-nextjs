@@ -1,12 +1,10 @@
-import { Montserrat } from '@next/font/google';
+import Layout from '@/components/layout/layout';
 import '@/styles/globals.css';
-
-const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={montserrat.className}>
+    <Layout>
       <Component {...pageProps} />
-    </main>
+    </Layout>
   );
 }

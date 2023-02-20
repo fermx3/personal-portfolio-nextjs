@@ -1,6 +1,6 @@
 import { request, gql, GraphQLClient } from 'graphql-request';
 import Link from 'next/link';
-import ProyectoItem from '../portfolio/proyecto-item';
+import ProyectoItem from './proyecto-item';
 
 const PortfolioSection = ({ proyectos }) => {
   return (

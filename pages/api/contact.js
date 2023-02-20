@@ -35,10 +35,10 @@ export default function handler(req, res) {
     const mailData = {
       from: 'contacto@webloom.com.mx',
       to: 'fer.riosalcantara@gmail.com',
-      subject: `Mensaje de ${req.body.nombre} para Webloom`,
-      text: req.body.mensaje,
-      html: `<div>${req.body.mensaje}</div><p>Enviado de:
-      ${req.body.email}</p>`,
+      subject: `Mensaje de ${nombre} para Webloom`,
+      text: mensaje,
+      html: `<div>${mensaje}</div><p>Enviado de:
+      ${email}</p>`,
     };
 
     const info = await transporter.sendMail(mailData);
