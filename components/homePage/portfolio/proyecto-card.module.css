@@ -12,5 +12,6 @@
 }
 
 .cardFull {
-  margin: var(--size-6) var(--size-3);
+  margin: var(--size-7) auto 0;
+  max-width: 800px;
 }

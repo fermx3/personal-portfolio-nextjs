@@ -25,8 +25,10 @@ const ProyectoItem = ({ proyecto, detalles }) => {
         className={`${classes.contenido} ${detalles && classes.contenidoFull}`}
       >
         <header className={classes.header}>
-          <h3>{titulo}</h3>
-          <h4>{subtitulo}</h4>
+          <Link href={`/portafolio/${slug}`}>
+            <h3>{titulo}</h3>
+            <h4>{subtitulo}</h4>
+          </Link>
         </header>
         <ButtonGroup buttons={tecnologias} />
         <div className={classes.descripcion}>

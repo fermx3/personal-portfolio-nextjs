@@ -14,7 +14,7 @@ const ProyectoDetallesPage = ({ proyectoData, detalles }) => {
         <title>{proyectoData.titulo} by Webloom</title>
         <meta name='description' content={metaDesc} />
       </Head>
-      <ProyectoItem proyecto={proyectoData} detalles={detalles} />;
+      <ProyectoItem proyecto={proyectoData} detalles={detalles} />
     </Fragment>
   );
 };

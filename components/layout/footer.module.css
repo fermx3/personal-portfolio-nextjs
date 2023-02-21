@@ -1,6 +1,6 @@
 .footer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-items: center;
   align-items: center;
   background: var(--color-3);
@@ -14,8 +14,8 @@
 }
 
 .social {
-  filter: invert(75%);
-  margin-left: auto;
+  filter: invert(--invert-percentage);
+  justify-self: center;
 }
 
 @media (max-width: 769px) {
@@ -25,7 +25,6 @@
 
   .social {
     margin-top: var(--size-0);
-    margin-left: unset;
-    margin-right: auto;
+    justify-self: flex-start;
   }
 }

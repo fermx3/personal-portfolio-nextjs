@@ -20,6 +20,10 @@
   margin-top: var(--size-5);
 }
 
+.descripcion p {
+  margin-bottom: var(--size-0);
+}
+
 .contenidoFull {
   max-width: unset;
   width: 100%;
