@@ -60,3 +60,10 @@
 .icons {
   display: flex;
 }
+
+@media (min-width: 1185px) {
+  .imagen {
+    width: 29rem;
+    height: 18rem;
+  }
+}
