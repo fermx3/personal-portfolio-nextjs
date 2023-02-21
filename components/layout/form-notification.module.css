@@ -1,0 +1,30 @@
+.notification {
+  padding: var(--size-1);
+  padding-bottom: var(--size-0);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  animation: swingTop 1s ease 0s 1 normal forwards;
+}
+
+.success {
+  background: var(--color-1);
+  color: var(--color-5);
+}
+
+.error {
+  background: var(--color-error);
+  color: var(--color-0);
+}
+
+@keyframes swingTop {
+  0% {
+    opacity: 0;
+    transform: rotateX(-100deg);
+    transform-origin: top;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
+}

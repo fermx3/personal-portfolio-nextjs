@@ -1,59 +1,46 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 import ButtonGroup from '@/components/homePage/portfolio/categories-group';
+import ProyectoCard from './proyecto-card';
 
 import classes from './proyecto-item.module.css';
-import Icon from '@/components/images/icon';
+import ProyectoImagen from './proyecto-imagen';
+import ProyectoLinks from './proyecto-links';
 
-const ProyectoItem = ({ proyecto }) => {
+const ProyectoItem = ({ proyecto, detalles }) => {
   const { titulo, subtitulo, tecnologias, slug, desc, github, website } =
     proyecto;
 
-  const extracto = desc.markdown.slice(0, 300) + '...';
+  let descripcion = desc.markdown;
+
+  if (!detalles) {
+    descripcion = desc.markdown.slice(0, 300) + '...';
+  }
 
   return (
-    <article className={classes.proyecto}>
-      <div className={classes.imagen}>
-        <Image
-          src={`/images/proyectos/${slug}.png`}
-          alt={titulo}
-          fill
-          // height={887 / 3}
-          // width={1280 / 3}
-        />
-      </div>
-      <div className={classes.detalles}>
-        <div className={classes.header}>
+    <ProyectoCard>
+      <ProyectoImagen slug={slug} alt={titulo} detalles={detalles} />
+      <div
+        className={`${classes.contenido} ${detalles && classes.contenidoFull}`}
+      >
+        <header className={classes.header}>
           <h3>{titulo}</h3>
           <h4>{subtitulo}</h4>
-        </div>
+        </header>
         <ButtonGroup buttons={tecnologias} />
-        <div className={classes.contenido}>
-          <ReactMarkdown>{extracto}</ReactMarkdown>
+        <div className={classes.descripcion}>
+          <ReactMarkdown>{descripcion}</ReactMarkdown>
         </div>
-        <div className={classes.links}>
-          <Link href={`/portafolio/${slug}`}>Leer más...</Link>
-          <div className={classes.icons}>
-            {github && (
-              <a href={github} target='_blank' rel='noreferrer noopener'>
-                <Icon
-                  src='/images/icons/social-media/github.svg'
-                  alt={`${titulo} github link`}
-                />
-              </a>
-            )}
-            <a href={website} target='_blank' rel='noreferrer noopener'>
-              <Icon
-                src='/images/icons/social-media/website.svg'
-                alt={`${titulo} website link`}
-              />
-            </a>
-          </div>
-        </div>
+        <ProyectoLinks
+          slug={slug}
+          github={github}
+          website={website}
+          titulo={titulo}
+          detalles={detalles}
+        />
       </div>
-    </article>
+    </ProyectoCard>
   );
 };
 

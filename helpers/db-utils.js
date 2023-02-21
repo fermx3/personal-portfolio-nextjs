@@ -28,12 +28,14 @@ export async function getAllProyectos() {
 }
 
 export async function getMoreProyectos(lastPost) {
+  const skip = Number(lastPost);
+
   const query = gql`
-    query MoreProyectos($skip: Int = ${lastPost}) {
+    query MoreProyectos($skip: Int) {
       proyectos(skip: $skip, first: 4, orderBy: createdAt_DESC) {
         desc {
           markdown
-          }
+        }
         id
         subtitulo
         tecnologias
@@ -45,7 +47,7 @@ export async function getMoreProyectos(lastPost) {
     }
   `;
 
-  const result = await request(hygraphAPI, query);
+  const result = await request(hygraphAPI, query, { skip });
 
   const { proyectos } = result;
 
@@ -79,4 +81,46 @@ export async function getFeaturedProyectos() {
   const { proyectos } = result;
 
   return proyectos;
+}
+
+export async function getFeaturedSlugs() {
+  const query = gql`
+    query FeaturedProyectos {
+      proyectos(where: { isFeatured: true }) {
+        slug
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query);
+
+  const { proyectos } = result;
+
+  return proyectos;
+}
+
+export async function getProyectoDetails(slug) {
+  const query = gql`
+    query proyectoDetails($slug: String) {
+      proyecto(where: { slug: $slug }) {
+        desc {
+          markdown
+        }
+        github
+        id
+        isFeatured
+        slug
+        subtitulo
+        tecnologias
+        titulo
+        website
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query, { slug });
+
+  const { proyecto } = result;
+
+  return proyecto;
 }

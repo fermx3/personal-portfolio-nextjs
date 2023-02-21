@@ -1,0 +1,16 @@
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  filter: drop-shadow(0px 0px 10px rgba(var(--shadow-pic-color), 0.3));
+  margin-top: var(--size-3);
+}
+
+.icons {
+  display: flex;
+}
+
+.linksOnDetail {
+  justify-content: flex-end;
+  margin-top: var(--size-5);
+}

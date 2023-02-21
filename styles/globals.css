@@ -43,6 +43,8 @@
   --color-3: rgb(49, 74, 150);
   --color-4: rgb(54, 4, 103);
   --color-5: rgb(43, 43, 43);
+  --color-error: rgb(211, 47, 47);
+  --color-disabled: rgb(195, 195, 206);
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,

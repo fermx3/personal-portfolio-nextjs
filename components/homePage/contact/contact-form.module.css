@@ -67,7 +67,8 @@
 
 .submit {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
   margin-top: var(--size-4);
 }
 

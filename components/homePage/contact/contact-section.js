@@ -2,6 +2,7 @@ import ContactForm from './contact-form';
 import Icon from '../../images/icon';
 
 import classes from './contact-section.module.css';
+import Button from '@/components/ui/button';
 
 const ContactSection = () => {
   return (
@@ -10,8 +11,10 @@ const ContactSection = () => {
         <h2>Cómo sería tu web ideal?</h2>
         <h3>Cuentame para hacerla realidad.</h3>
       </div>
-      <div>
-        <a href='mailto:hola@webloom.com.mx'>hola@webloom.com.mx</a>
+      <div className={classes.links}>
+        <Button href='mailto:hola@webloom.com.mx' type='link'>
+          hola@webloom.com.mx
+        </Button>
         <div className={classes.socialIcons}>
           <a
             href='https://www.facebook.com/webloom.disenoweb'

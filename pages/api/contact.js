@@ -42,8 +42,9 @@ export default function handler(req, res) {
     };
 
     const info = await transporter.sendMail(mailData);
+    // console.log(info);
 
-    res.status(200).json({ message: `Message sent: ${info.messageId}` });
+    res.status(200).json({ message: `Mensaje enviado!` });
   }
 
   main().catch((error) => res.status(500).json(error.message));

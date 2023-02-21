@@ -6,14 +6,18 @@ import ProyectoGrid from '@/components/homePage/portfolio/proyecto-grid';
 import Button from '@/components/ui/button';
 import Notificacion from '@/components/ui/notificacion';
 
-import classes from '../styles/Portafolio.module.css';
+import classes from '../../styles/Portafolio.module.css';
+import Loader from '@/components/ui/loader';
 
 const Portafolio = (props) => {
   const [proyectos, setProyectos] = useState(props.proyectos);
   const [noMoreProyectos, setNoMoreProyectos] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = async () => {
     setNoMoreProyectos(false);
+    setIsLoading(true);
+
     const result = await fetch(`/api/more-proyectos/${proyectos.length}`);
 
     const data = await result.json();
@@ -21,9 +25,11 @@ const Portafolio = (props) => {
     const newProyectos = data.proyectos;
 
     if (newProyectos.length === 0) {
+      setIsLoading(false);
       setNoMoreProyectos(true);
     } else {
       setProyectos([...proyectos, ...newProyectos]);
+      setIsLoading(false);
     }
   };
 
@@ -34,7 +40,10 @@ const Portafolio = (props) => {
       {noMoreProyectos && (
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
       )}
-      <Button onClick={handleClick}>Ver más proyectos</Button>
+      {isLoading && <Loader />}
+      <Button onClick={handleClick} disabled={isLoading}>
+        {isLoading ? 'Loading...' : 'Ver más proyectos'}
+      </Button>
     </section>
   );
 };

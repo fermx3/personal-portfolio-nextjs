@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import FormNotification from '@/components/layout/form-notification';
+import Loader from '@/components/ui/loader';
+import { Fragment, useState } from 'react';
 
 import Button from '../../ui/button';
 
@@ -27,86 +29,93 @@ const ContactForm = () => {
       },
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
       setFormFeedback({
-        message: 'Something went wrong. Please try again!',
+        message: data.message || 'Algo salió mal. Por favor intenta de nuevo!',
         status: 'error',
       });
       setIsLoading(false);
       return;
     }
 
-    const data = await response.json();
-
     setEmail('');
     setNombre('');
     setMensaje('');
-    setFormFeedback({ message: 'Mensaje enviado!', status: 'success' });
+    setFormFeedback({
+      message: data.message || 'Mensaje enviado!',
+      status: 'success',
+    });
     setIsLoading(false);
   };
 
   return (
-    <div className={classes.card}>
-      <h3>Mándame un mensaje:</h3>
-      <form onSubmit={handleSubmit} className={classes.form}>
-        <div className={classes.inputGroup}>
-          <div className={classes.nombre}>
-            <label htmlFor='nombre' hidden>
-              Nombre:
+    <Fragment>
+      <div className={classes.card}>
+        <h3>Mándame un mensaje:</h3>
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <div className={classes.inputGroup}>
+            <div className={classes.nombre}>
+              <label htmlFor='nombre' hidden>
+                Nombre:
+              </label>
+              <input
+                type='text'
+                id='nombre'
+                placeholder='Nombre'
+                value={nombre}
+                onChange={(e) => {
+                  setNombre(e.target.value);
+                }}
+                required
+              />
+            </div>
+            <div className={classes.email}>
+              <label htmlFor='email' hidden>
+                e-mail:
+              </label>
+              <input
+                type='email'
+                id='email'
+                placeholder='email'
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                required
+              />
+            </div>
+          </div>
+          <div className={classes.mensaje}>
+            <label htmlFor='mensaje' hidden>
+              Mensaje:
             </label>
-            <input
-              type='text'
-              id='nombre'
-              placeholder='Nombre'
-              value={nombre}
+            <textarea
+              id='mensaje'
+              placeholder='Mensaje'
+              value={mensaje}
               onChange={(e) => {
-                setNombre(e.target.value);
+                setMensaje(e.target.value);
               }}
               required
-            />
+            ></textarea>
           </div>
-          <div className={classes.email}>
-            <label htmlFor='email' hidden>
-              e-mail:
-            </label>
-            <input
-              type='email'
-              id='email'
-              placeholder='email'
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              required
-            />
+          <div className={classes.submit}>
+            {isLoading && <Loader />}
+            <Button disabled={isLoading}>
+              {isLoading ? 'Enviando mensaje...' : 'Enviar'}
+            </Button>
           </div>
-        </div>
-        <div className={classes.mensaje}>
-          <label htmlFor='mensaje' hidden>
-            Mensaje:
-          </label>
-          <textarea
-            id='mensaje'
-            placeholder='Mensaje'
-            value={mensaje}
-            onChange={(e) => {
-              setMensaje(e.target.value);
-            }}
-            required
-          ></textarea>
-        </div>
-        <div className={classes.submit}>
-          <Button disabled={isLoading}>Enviar</Button>
-          {isLoading && 'Enviando mensaje...'}
-        </div>
-        {formFeedback && (
-          <p>
-            <span>{formFeedback.status}</span>
-            <span>{formFeedback.message}</span>
-          </p>
-        )}
-      </form>
-    </div>
+        </form>
+      </div>
+      {formFeedback && (
+        <FormNotification
+          message={formFeedback.message}
+          status={formFeedback.status}
+        />
+      )}
+    </Fragment>
   );
 };
 
