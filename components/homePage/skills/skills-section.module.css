@@ -8,3 +8,9 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: 769px) {
+  .skills {
+    padding: var(--size-7) var(--size-4);
+  }
+}

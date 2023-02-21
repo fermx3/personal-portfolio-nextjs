@@ -70,3 +70,10 @@
   justify-content: center;
   margin-top: var(--size-4);
 }
+
+@media (max-width: 769px) {
+  .nombre,
+  .email {
+    width: 100%;
+  }
+}

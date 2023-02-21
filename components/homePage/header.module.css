@@ -53,7 +53,6 @@
   position: relative;
   right: 30px;
   text-align: center;
-  margin-top: var(--size-2);
 }
 
 .profileImage img {
@@ -72,4 +71,15 @@
     rgb(246, 128, 132) 100%
   );
   border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+}
+
+@media (max-width: 769px) {
+  .header {
+    padding: var(--size-4) var(--size-3);
+  }
+
+  .profileImage {
+    right: 0;
+    margin-top: var(--size-5);
+  }
 }
