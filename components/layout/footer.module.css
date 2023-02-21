@@ -14,7 +14,7 @@
 }
 
 .social {
-  filter: invert(--invert-percentage);
+  filter: invert(var(--invert-percentage));
   justify-self: center;
 }
 
