@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Button from '../ui/button';
+import Button from '../../ui/button';
 
 import classes from './contact-form.module.css';
 
@@ -95,10 +95,10 @@ const ContactForm = () => {
             required
           ></textarea>
         </div>
-        <Button disabled={isLoading} className={classes.submit}>
-          Enviar
-        </Button>
-        {isLoading && 'Enviando mensaje...'}
+        <div className={classes.submit}>
+          <Button disabled={isLoading}>Enviar</Button>
+          {isLoading && 'Enviando mensaje...'}
+        </div>
         {formFeedback && (
           <p>
             <span>{formFeedback.status}</span>

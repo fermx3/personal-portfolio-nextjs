@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), auto));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   justify-content: center;
   padding: var(--size-7) var(--size-3);
 }

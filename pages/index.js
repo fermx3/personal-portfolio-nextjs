@@ -4,7 +4,7 @@ import Header from '@/components/homePage/header';
 import styles from '@/styles/Home.module.css';
 import SkillsSection from '@/components/homePage/skills/skills-section';
 import PortfolioSection from '@/components/homePage/portfolio/portfolio-section';
-import ContactSection from '@/components/contact/contact-section';
+import ContactSection from '@/components/homePage/contact/contact-section';
 import { getFeaturedProyectos } from '@/helpers/db-utils';
 
 export default function Home({ proyectos }) {

@@ -10,6 +10,7 @@
 
 .contactHeader {
   margin-bottom: var(--size-2);
+  padding: 0 var(--size-0);
 }
 
 .contactHeader h2 {
@@ -18,6 +19,7 @@
 
 .contactHeader h3 {
   color: var(--color-3);
+  font-size: inherit;
 }
 
 .socialIcons {
