@@ -1,9 +1,22 @@
+import Head from 'next/head';
+
 import ProyectoItem from '@/components/homePage/portfolio/proyecto-item';
 
 import { getFeaturedSlugs, getProyectoDetails } from '@/helpers/db-utils';
+import { Fragment } from 'react';
 
 const ProyectoDetallesPage = ({ proyectoData, detalles }) => {
-  return <ProyectoItem proyecto={proyectoData} detalles={detalles} />;
+  const metaDesc = proyectoData.desc.markdown.replace(/\*/g, '').slice(0, 160);
+
+  return (
+    <Fragment>
+      <Head>
+        <title>{proyectoData.titulo} by Webloom</title>
+        <meta name='description' content={metaDesc} />
+      </Head>
+      <ProyectoItem proyecto={proyectoData} detalles={detalles} />;
+    </Fragment>
+  );
 };
 
 export default ProyectoDetallesPage;
@@ -32,8 +45,3 @@ export const getStaticPaths = async () => {
     fallback: 'blocking',
   };
 };
-
-//primer tatuaje, blog de cuidados posteriores a tatuaje, estilos de tatuaje, que hacer o como cotizar tatuaje zona medida a color b&n
-//contador de visitas al mes
-//7 fuegos calendario champions
-//arbol de la 10 deportes
