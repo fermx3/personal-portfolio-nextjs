@@ -1,11 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
+
 import { useEffect, useState } from 'react';
 
-import classes from './main-nav.module.css';
+import classes from './main-navigation.module.css';
 
 const MainNavigation = ({ font }) => {
   const [scrolled, setScrolled] = useState(false);
+
+  const { pathname } = useRouter();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -35,7 +39,9 @@ const MainNavigation = ({ font }) => {
       </Link>
       {/* Insert mobile menu */}
       <div className={classes.navMenu}>
-        <Link href='/#portafolio'>Portafolio</Link>
+        <Link href={pathname !== '/' ? '/portafolio' : '/#portafolio'}>
+          Portafolio
+        </Link>
         <Link href='/#contacto'>Contacto</Link>
       </div>
     </div>
