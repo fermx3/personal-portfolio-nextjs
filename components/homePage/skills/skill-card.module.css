@@ -1,7 +1,7 @@
 .skill {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: rgb(var(--card-rgb));
   padding: var(--size-3);
   border-radius: var(--border-radius);
   box-shadow: 0px 2px 10px rgba(var(--shadow-card-color), 0.01),

@@ -55,7 +55,7 @@
 .disabledStyle,
 .disabledStyle:hover,
 .disabledStyle:focus {
-  background: #fff;
+  background: rgb(var(--card-rgb));
   box-shadow: none;
   color: var(--color-disabled);
 }
