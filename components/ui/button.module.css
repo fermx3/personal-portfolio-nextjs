@@ -4,8 +4,10 @@
   color: var(--color-0);
   font-weight: 600;
   width: fit-content;
+  height: fit-content;
   padding: 18px 32px;
   border-radius: var(--border-radius);
+  border: none;
   transition: all 0.5s ease-in;
 }
 

@@ -6,6 +6,7 @@
   margin-bottom: var(--size-7);
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: var(--size-7);
 }
 
 .portafolio h1 {

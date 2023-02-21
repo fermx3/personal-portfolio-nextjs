@@ -11,6 +11,10 @@
     0px 4px 20px rgba(var(--shadow-card-color), 0.05);
 }
 
+.imagen img {
+  border-radius: var(--border-radius-inner);
+}
+
 .detalles {
   display: flex;
   flex-direction: column;

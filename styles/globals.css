@@ -3,6 +3,7 @@
   --max-width-half: 500px;
   --max-width-card: 300px;
   --border-radius: 12px;
+  --border-radius-inner: 8px;
 
   --foreground-rgb: 43, 43, 43;
   --background-start-rgb: 243, 231, 233;

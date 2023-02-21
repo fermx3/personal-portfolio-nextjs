@@ -10,10 +10,12 @@ export async function getAllProyectos() {
           markdown
         }
         id
-        img
         subtitulo
         tecnologias
         titulo
+        github
+        website
+        slug
       }
     }
   `;
@@ -33,10 +35,12 @@ export async function getMoreProyectos(lastPost) {
           markdown
           }
         id
-        img
         subtitulo
         tecnologias
         titulo
+        github
+        website
+        slug
       }
     }
   `;
@@ -60,10 +64,12 @@ export async function getFeaturedProyectos() {
           markdown
         }
         id
-        img
         subtitulo
         tecnologias
         titulo
+        github
+        website
+        slug
       }
     }
   `;
