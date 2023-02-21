@@ -11,8 +11,17 @@
     0px 4px 20px rgba(var(--shadow-card-color), 0.05);
 }
 
+.imagen {
+  width: 20rem;
+  height: 12rem;
+  position: relative;
+  margin-bottom: var(--size-3);
+}
+
 .imagen img {
   border-radius: var(--border-radius-inner);
+  object-fit: cover;
+  object-position: top;
 }
 
 .detalles {

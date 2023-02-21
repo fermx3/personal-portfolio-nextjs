@@ -19,8 +19,9 @@ const ProyectoItem = ({ proyecto }) => {
         <Image
           src={`/images/proyectos/${slug}.png`}
           alt={titulo}
-          height={887 / 3}
-          width={1280 / 3}
+          fill
+          // height={887 / 3}
+          // width={1280 / 3}
         />
       </div>
       <div className={classes.detalles}>
