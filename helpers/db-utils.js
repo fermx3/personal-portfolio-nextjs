@@ -1,6 +1,6 @@
 import { gql, request } from 'graphql-request';
 
-const hygraphAPI = process.env.URL;
+const hygraphAPI = process.env.HYGRAPH_URL;
 
 export async function getAllProyectos() {
   const query = gql`
