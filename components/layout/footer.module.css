@@ -1,0 +1,22 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 33%), 1fr));
+  justify-items: center;
+  align-items: center;
+  background: var(--color-3);
+  color: var(--color-disabled);
+  font-size: var(--size-0);
+  font-weight: bold;
+  margin-top: var(--size-4);
+  padding: var(--size-3);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  width: 100%;
+}
+
+.social {
+  margin-left: auto;
+}
+
+.social {
+  filter: invert(75%);
+}

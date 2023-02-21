@@ -25,20 +25,9 @@
 .links {
   display: flex;
   flex-direction: column;
+  margin-bottom: var(--size-7);
 }
 
 .links a {
   margin: var(--size-2) 0;
-}
-
-.socialIcons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: var(--size-7);
-}
-
-.socialIcons a {
-  width: 60px;
-  height: 60px;
 }

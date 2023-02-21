@@ -1,9 +1,9 @@
+import { Fragment } from 'react';
 import Head from 'next/head';
 
 import ProyectoItem from '@/components/homePage/portfolio/proyecto-item';
 
 import { getFeaturedSlugs, getProyectoDetails } from '@/helpers/db-utils';
-import { Fragment } from 'react';
 
 const ProyectoDetallesPage = ({ proyectoData, detalles }) => {
   const metaDesc = proyectoData.desc.markdown.replace(/\*/g, '').slice(0, 160);
