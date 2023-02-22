@@ -41,7 +41,7 @@
 }
 
 .link {
-  color: var(--color-5);
+  color: var(--foreground-rgb);
   background: transparent;
 }
 

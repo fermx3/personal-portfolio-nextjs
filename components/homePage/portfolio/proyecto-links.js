@@ -15,6 +15,7 @@ const ProyectoLinks = ({ slug, github, website, titulo, detalles }) => {
             <Icon
               src='/images/icons/social-media/github.svg'
               alt={`${titulo} github link`}
+              whiteOnDarkTheme
             />
           </a>
         )}
@@ -27,6 +28,7 @@ const ProyectoLinks = ({ slug, github, website, titulo, detalles }) => {
             <Icon
               src='/images/icons/social-media/website.svg'
               alt={`${titulo} website link`}
+              whiteOnDarkTheme
             />
           </a>
         )}

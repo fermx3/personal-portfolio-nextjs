@@ -16,7 +16,7 @@ const ContactSection = () => {
         <Button href='mailto:hola@webloom.com.mx' type='link'>
           hola@webloom.com.mx
         </Button>
-        <SocialIcons />
+        <SocialIcons whiteOnDarkTheme />
       </div>
       <ContactForm />
     </section>

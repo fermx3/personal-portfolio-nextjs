@@ -7,7 +7,7 @@
 
 .success {
   background: var(--color-1);
-  color: var(--color-5);
+  color: var(--foreground-rgb);
 }
 
 .error {

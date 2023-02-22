@@ -14,6 +14,7 @@ const SkillsSection = () => {
           antes de proponer soluciones efectivas y prácticas.'
         p2='Además, estoy siempre aprendiendo y mejorando mis habilidades para
           poder ofrecer soluciones innovadoras y creativas.'
+        whiteOnDarkTheme
       />
       <SkillCard
         src='/images/icons/lenguajes-js.svg'

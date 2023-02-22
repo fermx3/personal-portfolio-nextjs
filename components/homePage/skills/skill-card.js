@@ -2,11 +2,15 @@ import Icon from '../../images/icon';
 
 import classes from './skill-card.module.css';
 
-const SkillCard = ({ src, titulo, p1, p2 }) => {
+const SkillCard = ({ src, titulo, p1, p2, whiteOnDarkTheme }) => {
   return (
     <div className={classes.skill}>
       <div>
-        <Icon src={src} alt={`${titulo} icono`} />
+        <Icon
+          src={src}
+          alt={`${titulo} icono`}
+          whiteOnDarkTheme={whiteOnDarkTheme}
+        />
         <h3>{titulo}</h3>
       </div>
       <div>

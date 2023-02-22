@@ -10,3 +10,7 @@
 .icon p {
   font-size: var(--size-0);
 }
+
+.whiteOnDarkTheme img {
+  filter: invert(var(--invert-percentage));
+}

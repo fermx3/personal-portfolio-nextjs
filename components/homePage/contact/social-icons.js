@@ -2,9 +2,13 @@ import Icon from '@/components/images/icon';
 
 import classes from './social-icons.module.css';
 
-const SocialIcons = () => {
+const SocialIcons = ({ whiteOnDarkTheme }) => {
   return (
-    <div className={classes.socialIcons}>
+    <div
+      className={`${classes.socialIcons} ${
+        whiteOnDarkTheme && classes.whiteOnDarkTheme
+      }`}
+    >
       <a
         href='https://www.facebook.com/webloom.disenoweb'
         target='_blank'

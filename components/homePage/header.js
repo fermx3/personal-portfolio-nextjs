@@ -26,6 +26,7 @@ const Header = () => {
             src='/images/icons/languajes/nextjs.svg'
             caption='next.js'
             nivel='Intermedio'
+            whiteOnDarkTheme
           />
           <Icon
             src='/images/icons/languajes/react.svg'

@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-items: center;
   align-items: center;
-  background: var(--color-3);
+  background: rgb(49, 74, 150);
   color: var(--color-disabled);
   font-size: var(--size-0);
   font-weight: bold;
@@ -14,7 +14,7 @@
 }
 
 .social {
-  filter: invert(var(--invert-percentage));
+  filter: invert(75%);
   justify-self: center;
 }
 
