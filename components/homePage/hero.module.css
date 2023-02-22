@@ -1,4 +1,4 @@
-.header {
+.hero {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), auto));
   justify-content: center;
@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-/* .header::before {
+/* .hero::before {
   content: '';
   background-image: url(/images/mesh-gradient.png);
   background-size: cover;
@@ -74,7 +74,7 @@
 }
 
 @media (max-width: 769px) {
-  .header {
+  .hero {
     padding: var(--size-4) var(--size-3);
   }
 

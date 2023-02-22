@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Header from '@/components/homePage/header';
+import Hero from '@/components/homePage/hero';
 import SkillsSection from '@/components/homePage/skills/skills-section';
 import PortfolioSection from '@/components/homePage/portfolio/portfolio-section';
 import ContactSection from '@/components/homePage/contact/contact-section';
@@ -18,7 +18,7 @@ export default function Home({ proyectos }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header />
+      <Hero />
       {/* Inyectar aquí navbar con un div en el documento? */}
       <SkillsSection />
       <PortfolioSection proyectos={proyectos} />

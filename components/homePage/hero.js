@@ -1,20 +1,19 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Icon from '../images/icon';
 import Button from '../ui/button';
 
-import classes from './header.module.css';
+import classes from './hero.module.css';
 
-const Header = () => {
+const Hero = () => {
   return (
-    <header className={classes.header}>
+    <header className={classes.hero}>
       <div className={classes.profile}>
         <div className={classes.title}>
           <h1>¡Hola! soy Fernando Rios</h1>
-          <h2>Desarrollador Web FullStack</h2>
+          <h2>Desarrollador Web FrontEnd</h2>
         </div>
         <p>
-          Soy un desarrollador web full stack especializado en React.js,
+          Soy un desarrollador web front end especializado en React.js,
           WordPress y SEO, comprometido en crear aplicaciones web dinámicas y
           optimizadas para motores de búsqueda que satisfagan las necesidades de
           mis clientes y usuarios. Mi objetivo es proporcionar soluciones de
@@ -60,4 +59,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Hero;
