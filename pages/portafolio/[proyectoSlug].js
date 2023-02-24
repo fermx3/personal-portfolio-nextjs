@@ -4,14 +4,22 @@ import Head from 'next/head';
 import ProyectoItem from '@/components/homePage/portfolio/proyecto-item';
 
 import { getFeaturedSlugs, getProyectoDetails } from '@/helpers/db-utils';
+import MetaTags from '@/components/head/meta-tags';
 
 const ProyectoDetallesPage = ({ proyectoData, detalles }) => {
   const metaDesc = proyectoData.desc.markdown.replace(/\*/g, '').slice(0, 160);
+  const dinamicTitle = `${proyectoData.titulo} by Webloom`;
 
   return (
     <Fragment>
       <Head>
-        <title>{proyectoData.titulo} by Webloom</title>
+        <title>{dinamicTitle}</title>
+        <MetaTags
+          title={dinamicTitle}
+          desc={metaDesc}
+          url={`portafolio/${proyectoData.slug}`}
+          image={`/images/proyectos/${proyectoData.slug}.png`}
+        />
         <meta name='description' content={metaDesc} />
       </Head>
       <ProyectoItem proyecto={proyectoData} detalles={detalles} />

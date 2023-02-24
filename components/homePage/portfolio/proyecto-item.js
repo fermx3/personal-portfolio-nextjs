@@ -20,7 +20,12 @@ const ProyectoItem = ({ proyecto, detalles }) => {
 
   return (
     <ProyectoCard detalles={detalles}>
-      <ProyectoImagen slug={slug} alt={titulo} detalles={detalles} />
+      <ProyectoImagen
+        slug={slug}
+        alt={titulo}
+        detalles={detalles}
+        priority={detalles}
+      />
       <div
         className={`${classes.contenido} ${detalles && classes.contenidoFull}`}
       >

@@ -9,6 +9,7 @@ import Notificacion from '@/components/ui/notificacion';
 
 import classes from '../../styles/Portafolio.module.css';
 import Loader from '@/components/ui/loader';
+import MetaTags from '@/components/head/meta-tags';
 
 const Portafolio = (props) => {
   const [proyectos, setProyectos] = useState(props.proyectos);
@@ -38,6 +39,11 @@ const Portafolio = (props) => {
     <section className={classes.portafolio}>
       <Head>
         <title>Portafolio de proyectos web | Webloom</title>
+        <MetaTags
+          title='Portafolio de proyectos web | Webloom'
+          desc='Explora mi portafolio de proyectos web. He desarrollado sitios web personalizados para una amplia variedad de clientes, de pymes. Mi enfoque en el diseño y la funcionalidad garantiza que cada sitio web sea atractivo y fácil de usar para los visitantes. Obtén inspiración para tu próximo proyecto web y contáctame para saber cómo puedo ayudarte a alcanzar tus objetivos en línea.'
+          url='portafolio'
+        />
         <meta
           name='description'
           content='Explora mi portafolio de proyectos web. He desarrollado sitios web personalizados para una amplia variedad de clientes, de pymes. Mi enfoque en el diseño y la funcionalidad garantiza que cada sitio web sea atractivo y fácil de usar para los visitantes. Obtén inspiración para tu próximo proyecto web y contáctame para saber cómo puedo ayudarte a alcanzar tus objetivos en línea.'
