@@ -31,7 +31,7 @@ const MainNavigation = ({ font }) => {
     >
       <Link href='/'>
         <Image
-          src='/images/logo.png'
+          src='/images/site/logo.png'
           alt='webloom paginas web logo'
           width={1752 / 14}
           height={284 / 14}

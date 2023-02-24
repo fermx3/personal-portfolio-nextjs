@@ -13,7 +13,7 @@ const Footer = ({ font }) => {
       </div>
       <div>
         <Image
-          src='/images/logo.png'
+          src='/images/site/logo.png'
           alt='webloom logo'
           height={284 / 20}
           width={1752 / 20}

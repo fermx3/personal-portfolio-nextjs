@@ -48,7 +48,7 @@ const Hero = () => {
       <div className={classes.profileImage}>
         <div className={classes.blob}></div>
         <Image
-          src='/images/foto-perfil.png'
+          src='/images/site/foto-perfil.png'
           alt='Fernando Rios Desarrollador Web'
           width={300}
           height={300}
