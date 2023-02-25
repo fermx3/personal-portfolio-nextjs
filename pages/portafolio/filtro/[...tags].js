@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { getFilteredProyectos } from '@/helpers/db-utils';
@@ -17,6 +17,11 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
   const [noMoreProyectos, setNoMoreProyectos] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { query } = useRouter();
+
+  useEffect(() => {
+    setProyectos(filteredProyectos);
+    setNoMoreProyectos(false);
+  }, [filteredProyectos]);
 
   const queryFormated = query.tags.join('/');
   const listOfTags = tags.join(' + ');
@@ -62,9 +67,11 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
       )}
       {isLoading && <Loader />}
-      <Button onClick={handleClick} disabled={isLoading}>
-        {isLoading ? 'Cargando proyectos...' : 'Ver más proyectos'}
-      </Button>
+      {proyectos.length >= 4 && (
+        <Button onClick={handleClick} disabled={isLoading}>
+          {isLoading ? 'Cargando proyectos...' : 'Ver más proyectos'}
+        </Button>
+      )}
     </section>
   );
 };
