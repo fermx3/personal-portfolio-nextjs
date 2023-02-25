@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import { getAllProyectos } from '@/helpers/db-utils';
@@ -16,11 +17,16 @@ const Portafolio = (props) => {
   const [noMoreProyectos, setNoMoreProyectos] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const { pathname } = useRouter();
+
+  //Refactor this to React Context? as is used in [...tags].js too
   const handleClick = async () => {
     setNoMoreProyectos(false);
     setIsLoading(true);
 
-    const result = await fetch(`/api/more-proyectos/${proyectos.length}`);
+    const result = await fetch(
+      `/api/more-proyectos/${proyectos.length}/${pathname}`
+    );
 
     const data = await result.json();
 
@@ -34,6 +40,7 @@ const Portafolio = (props) => {
       setIsLoading(false);
     }
   };
+  //
 
   return (
     <section className={classes.section}>
@@ -56,7 +63,7 @@ const Portafolio = (props) => {
       )}
       {isLoading && <Loader />}
       <Button onClick={handleClick} disabled={isLoading}>
-        {isLoading ? 'Loading...' : 'Ver más proyectos'}
+        {isLoading ? 'Cargando proyectos...' : 'Ver más proyectos'}
       </Button>
     </section>
   );

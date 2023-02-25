@@ -8,7 +8,8 @@
 }
 
 .card h3 {
-  margin-bottom: var(--size-4);
+  margin-top: var(--size-0);
+  margin-bottom: var(--size-0);
 }
 
 .form {

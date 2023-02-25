@@ -1,22 +1,50 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { getFilteredProyectos } from '@/helpers/db-utils';
 
+import MetaTags from '@/components/head/meta-tags';
 import ProyectoGrid from '@/components/homePage/portfolio/proyecto-grid';
+import Notificacion from '@/components/ui/notificacion';
+import Loader from '@/components/ui/loader';
+import Button from '@/components/ui/button';
 
 import classes from '../../../styles/section.module.css';
-import MetaTags from '@/components/head/meta-tags';
 
 const FiltroPage = ({ filteredProyectos, tags }) => {
+  const [proyectos, setProyectos] = useState(filteredProyectos);
+  const [noMoreProyectos, setNoMoreProyectos] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { query } = useRouter();
+
+  const queryFormated = query.tags.join('/');
   const listOfTags = tags.join(' + ');
-  // const { pathname, query } = useRouter();
-  // console.log(pathname);
-  // console.log(query.tags);
 
   const dinamicTitle = `Proyectos realizados con: ${listOfTags} by Webloom`;
   const tagsForURL = tags.join('/');
   const dinamicURL = `https://www.webloom.com.mx/portafolio/filtro/${tagsForURL}`;
+
+  const handleClick = async () => {
+    setNoMoreProyectos(false);
+    setIsLoading(true);
+
+    const result = await fetch(
+      `/api/more-proyectos/${proyectos.length}/filtered/${queryFormated}`
+    );
+
+    const data = await result.json();
+
+    const newProyectos = data.proyectos;
+
+    if (newProyectos.length === 0) {
+      setIsLoading(false);
+      setNoMoreProyectos(true);
+    } else {
+      setProyectos([...proyectos, ...newProyectos]);
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section className={classes.section}>
@@ -29,7 +57,14 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
         />
       </Head>
       <h1>{`Proyectos realizados con: ${listOfTags}`}</h1>
-      <ProyectoGrid proyectos={filteredProyectos} />
+      <ProyectoGrid proyectos={proyectos} />
+      {noMoreProyectos && (
+        <Notificacion>No hay más proyectos que mostrar.</Notificacion>
+      )}
+      {isLoading && <Loader />}
+      <Button onClick={handleClick} disabled={isLoading}>
+        {isLoading ? 'Cargando proyectos...' : 'Ver más proyectos'}
+      </Button>
     </section>
   );
 };
@@ -52,6 +87,7 @@ export const getStaticProps = async (context) => {
       filteredProyectos,
       tags,
     },
+    revalidate: 3600,
   };
 };
 

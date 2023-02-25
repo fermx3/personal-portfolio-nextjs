@@ -5,9 +5,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  const length = req.query.length;
+  const [length, path, ...tecnologias] = req.query.slug;
 
-  const newProyectos = await getMoreProyectos(length);
+  const newProyectos = await getMoreProyectos(length, path, tecnologias);
 
   res.status(200).json({ proyectos: newProyectos });
 }
