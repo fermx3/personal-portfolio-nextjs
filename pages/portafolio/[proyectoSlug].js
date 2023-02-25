@@ -34,6 +34,12 @@ export const getStaticProps = async (context) => {
 
   const proyectoData = await getProyectoDetails(proyectoSlug);
 
+  if (!proyectoData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       proyectoData,

@@ -9,7 +9,7 @@ const Footer = ({ font }) => {
   return (
     <footer className={`${font} ${classes.footer}`}>
       <div>
-        {year} © Fernando Rios | Webloom. Todos los derechos reservados.
+        {`${year} © Fernando Rios | Webloom. Todos los derechos reservados.`}
       </div>
       <div>
         <Image

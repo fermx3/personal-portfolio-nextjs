@@ -6,10 +6,10 @@ import { getAllProyectos } from '@/helpers/db-utils';
 import ProyectoGrid from '@/components/homePage/portfolio/proyecto-grid';
 import Button from '@/components/ui/button';
 import Notificacion from '@/components/ui/notificacion';
-
-import classes from '../../styles/Portafolio.module.css';
 import Loader from '@/components/ui/loader';
 import MetaTags from '@/components/head/meta-tags';
+
+import classes from '../../styles/section.module.css';
 
 const Portafolio = (props) => {
   const [proyectos, setProyectos] = useState(props.proyectos);
@@ -36,7 +36,7 @@ const Portafolio = (props) => {
   };
 
   return (
-    <section className={classes.portafolio}>
+    <section className={classes.section}>
       <Head>
         <title>Portafolio de proyectos web | Webloom</title>
         <MetaTags

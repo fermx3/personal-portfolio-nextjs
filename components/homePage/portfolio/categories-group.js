@@ -6,7 +6,11 @@ const CategoriesGroup = ({ buttons }) => {
   return (
     <div className={classes.categories}>
       {buttons.map((tecnologia) => (
-        <Button key={tecnologia} href={'/'} type='small'>
+        <Button
+          key={tecnologia}
+          href={`/portafolio/filtro/${tecnologia}`}
+          type='small'
+        >
           {tecnologia}
         </Button>
       ))}

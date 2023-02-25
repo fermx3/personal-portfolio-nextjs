@@ -99,6 +99,36 @@ export async function getFeaturedSlugs() {
   return proyectos;
 }
 
+export async function getFilteredProyectos(filtros) {
+  const query = gql`
+    query getFilteredProyectos($tecnologias_contains_all: [Tecnologias!]) {
+      proyectos(
+        where: { tecnologias_contains_all: $tecnologias_contains_all }
+        orderBy: publishedAt_DESC
+      ) {
+        desc {
+          markdown
+        }
+        id
+        subtitulo
+        tecnologias
+        titulo
+        github
+        website
+        slug
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query, {
+    tecnologias_contains_all: filtros,
+  });
+
+  const { proyectos } = result;
+
+  return proyectos;
+}
+
 export async function getProyectoDetails(slug) {
   const query = gql`
     query proyectoDetails($slug: String) {

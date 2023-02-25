@@ -1,4 +1,4 @@
-.portafolio {
+.section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 1200px), 1fr));
   align-items: center;
@@ -9,7 +9,7 @@
   padding-bottom: var(--size-7);
 }
 
-.portafolio h1 {
+.section h1 {
   text-align: center;
   font-size: var(--size-4);
   margin: var(--size-5) 0;
@@ -17,6 +17,6 @@
   grid-column: span 2;
 }
 
-.portafolio button {
+.section button {
   grid-column: span 2;
 }
