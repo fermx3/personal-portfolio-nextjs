@@ -14,10 +14,9 @@ const PostDetails = ({ postData, fullCard }) => {
         <MetaTags
           title={`${postData.titulo} | Blog Webloom`}
           desc={metaDesc}
-          url={`portafolio/${postData.slug}`}
-          image={`/images/proyectos/${postData.slug}.png`}
+          url={`blog/${postData.slug}`}
+          image={postData.featuredImage.url}
         />
-        <meta name='description' content={metaDesc} />
       </Head>
       <ProyectoItem proyecto={postData} fullCard={fullCard} />
     </Fragment>

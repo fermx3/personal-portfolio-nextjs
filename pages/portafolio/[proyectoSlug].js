@@ -20,7 +20,6 @@ const ProyectoDetallesPage = ({ proyectoData, fullCard }) => {
           url={`portafolio/${proyectoData.slug}`}
           image={`/images/proyectos/${proyectoData.slug}.png`}
         />
-        <meta name='description' content={metaDesc} />
       </Head>
       <ProyectoItem proyecto={proyectoData} fullCard={fullCard} />
     </Fragment>
