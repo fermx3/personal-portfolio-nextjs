@@ -45,7 +45,7 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
         className={`${classes.contenido} ${fullCard && classes.contenidoFull}`}
       >
         <header className={classes.header}>
-          <Link href={`/portafolio/${slug}`}>
+          <Link href={website ? `/portafolio/${slug}` : `/blog/${slug}`}>
             <h3>{titulo}</h3>
             <h4>{subtitulo}</h4>
           </Link>
