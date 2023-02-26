@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 import { getAllProyectos } from '@/helpers/db-utils';
 
-import ProyectoGrid from '@/components/homePage/portfolio/proyecto-grid';
+import CardGrid from '@/components/portfolio/card-grid';
 import Button from '@/components/ui/button';
 import Notificacion from '@/components/ui/notificacion';
 import Loader from '@/components/ui/loader';
@@ -57,7 +57,7 @@ const Portafolio = (props) => {
         />
       </Head>
       <h1>Portafolio</h1>
-      <ProyectoGrid proyectos={proyectos} />
+      <CardGrid proyectos={proyectos} />
       {noMoreProyectos && (
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
       )}

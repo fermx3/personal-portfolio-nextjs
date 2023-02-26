@@ -1,13 +1,12 @@
 import React from 'react';
-import Icon from '../../images/icon';
-import SkillCard from './skill-card';
+import SkillItem from './skill-item';
 
 import classes from './skills-section.module.css';
 
 const SkillsSection = () => {
   return (
     <section className={classes.skills}>
-      <SkillCard
+      <SkillItem
         src='/images/icons/idea.svg'
         titulo='Solucionador de problemas'
         p1='Me gusta investigar y encontrar la causa raíz de cualquier problema
@@ -16,7 +15,7 @@ const SkillsSection = () => {
           poder ofrecer soluciones innovadoras y creativas.'
         whiteOnDarkTheme
       />
-      <SkillCard
+      <SkillItem
         src='/images/icons/lenguajes-js.svg'
         titulo='Lenguajes de programación'
         p1='Tengo experiencia en HTML, CSS y JavaScript, lo que me permite
@@ -25,7 +24,7 @@ const SkillsSection = () => {
             características en estos lenguajes para ofrecer soluciones web de
             alta calidad y rendimiento.'
       />
-      <SkillCard
+      <SkillItem
         src='/images/icons/frameworks-react.svg'
         titulo='Frameworks y Bibliotecas'
         p1='Soy experto en el uso de frameworks y bibliotecas populares como

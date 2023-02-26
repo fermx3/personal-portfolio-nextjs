@@ -1,8 +1,8 @@
 import ProyectoItem from './proyecto-item';
 
-import classes from './proyecto-grid.module.css';
+import classes from './card-grid.module.css';
 
-const ProyectoGrid = ({ proyectos }) => {
+const CardsGrid = ({ proyectos, posts }) => {
   return (
     <div className={classes.grid}>
       {proyectos.map((proyecto) => (
@@ -12,4 +12,4 @@ const ProyectoGrid = ({ proyectos }) => {
   );
 };
 
-export default ProyectoGrid;
+export default CardsGrid;

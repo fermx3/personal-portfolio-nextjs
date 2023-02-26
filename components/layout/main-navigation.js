@@ -42,6 +42,7 @@ const MainNavigation = ({ font }) => {
         <Link href={pathname !== '/' ? '/portafolio' : '/#portafolio'}>
           Portafolio
         </Link>
+        <Link href='/blog'>Blog</Link>
         <Link href='/#contacto'>Contacto</Link>
       </div>
     </div>

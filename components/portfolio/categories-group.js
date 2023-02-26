@@ -1,15 +1,15 @@
-import Button from '../../ui/button';
+import Button from '../ui/button';
 
 import classes from './categories-group.module.css';
 
-const CategoriesGroup = ({ buttons }) => {
+const CategoriesGroup = ({ buttons, query }) => {
   return (
     <div className={classes.categories}>
       {buttons.map((tecnologia) => (
         <Button
           key={tecnologia}
           href={`/portafolio/filtro/${tecnologia}`}
-          type='small'
+          type={`small`}
         >
           {tecnologia}
         </Button>

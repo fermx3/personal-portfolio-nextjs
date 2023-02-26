@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 
-import ProyectoItem from '@/components/homePage/portfolio/proyecto-item';
+import ProyectoItem from '@/components/portfolio/proyecto-item';
 
 import { getFeaturedSlugs, getProyectoDetails } from '@/helpers/db-utils';
 import MetaTags from '@/components/head/meta-tags';
 
-const ProyectoDetallesPage = ({ proyectoData, detalles }) => {
+const ProyectoDetallesPage = ({ proyectoData, fullCard }) => {
   const metaDesc = proyectoData.desc.markdown.replace(/\*/g, '').slice(0, 160);
   const dinamicTitle = `${proyectoData.titulo} by Webloom`;
 
@@ -22,7 +22,7 @@ const ProyectoDetallesPage = ({ proyectoData, detalles }) => {
         />
         <meta name='description' content={metaDesc} />
       </Head>
-      <ProyectoItem proyecto={proyectoData} detalles={detalles} />
+      <ProyectoItem proyecto={proyectoData} fullCard={fullCard} />
     </Fragment>
   );
 };
@@ -43,7 +43,7 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       proyectoData,
-      detalles: true,
+      fullCard: true,
     },
     revalidate: 600,
   };

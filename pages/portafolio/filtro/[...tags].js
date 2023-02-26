@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { getFilteredProyectos } from '@/helpers/db-utils';
 
 import MetaTags from '@/components/head/meta-tags';
-import ProyectoGrid from '@/components/homePage/portfolio/proyecto-grid';
+import CardGrid from '@/components/portfolio/card-grid';
 import Notificacion from '@/components/ui/notificacion';
 import Loader from '@/components/ui/loader';
 import Button from '@/components/ui/button';
@@ -62,7 +62,7 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
         />
       </Head>
       <h1>{`Proyectos realizados con: ${listOfTags}`}</h1>
-      <ProyectoGrid proyectos={proyectos} />
+      <CardGrid proyectos={proyectos} />
       {noMoreProyectos && (
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
       )}

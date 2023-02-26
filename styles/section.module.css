@@ -5,6 +5,7 @@
   justify-items: center;
   margin-bottom: var(--size-7);
   max-width: 1200px;
+  min-height: 80vh;
   margin: 0 auto;
   padding-bottom: var(--size-7);
 }

@@ -20,8 +20,16 @@
   margin-top: var(--size-5);
 }
 
+.descripcion h4 {
+  margin: var(--size-1) 0;
+}
+
 .descripcion p {
   margin-bottom: var(--size-0);
+}
+
+.descripcion a {
+  color: var(--color-3);
 }
 
 .contenidoFull {

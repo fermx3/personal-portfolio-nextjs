@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
-import Hero from '@/components/homePage/hero';
+import Hero from '@/components/homePage/hero/hero';
 import SkillsSection from '@/components/homePage/skills/skills-section';
-import PortfolioSection from '@/components/homePage/portfolio/portfolio-section';
+import PortfolioSection from '@/components/portfolio/portfolio-section';
 import ContactSection from '@/components/homePage/contact/contact-section';
 import { getFeaturedProyectos } from '@/helpers/db-utils';
 import MetaTags from '@/components/head/meta-tags';

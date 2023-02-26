@@ -1,8 +1,8 @@
 import Icon from '../../images/icon';
 
-import classes from './skill-card.module.css';
+import classes from './skill-item.module.css';
 
-const SkillCard = ({ src, titulo, p1, p2, whiteOnDarkTheme }) => {
+const SkillItem = ({ src, titulo, p1, p2, whiteOnDarkTheme }) => {
   return (
     <div className={classes.skill}>
       <div>
@@ -21,4 +21,4 @@ const SkillCard = ({ src, titulo, p1, p2, whiteOnDarkTheme }) => {
   );
 };
 
-export default SkillCard;
+export default SkillItem;

@@ -161,7 +161,6 @@ export async function getProyectoDetails(slug) {
         }
         github
         id
-        isFeatured
         slug
         subtitulo
         tecnologias
@@ -174,4 +173,66 @@ export async function getProyectoDetails(slug) {
   const result = await request(hygraphAPI, query, { slug });
   const { proyecto } = result;
   return proyecto;
+}
+
+// BLOG //
+
+export async function getAllPosts() {
+  const query = gql`
+    query getAllPosts {
+      posts(orderBy: publishedAt_DESC) {
+        desc {
+          markdown
+        }
+        id
+        slug
+        titulo
+        featuredImage {
+          url
+          createdAt
+        }
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query);
+  const { posts } = result;
+  return posts;
+}
+
+export async function getPostsSlugs() {
+  const query = gql`
+    query getPostsSlugs {
+      posts {
+        slug
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query);
+  const { posts } = result;
+  return posts;
+}
+
+export async function getPostDetails(slug) {
+  const query = gql`
+    query getPostDetails($slug: String) {
+      post(where: { slug: $slug }) {
+        desc {
+          markdown
+        }
+        id
+        slug
+        titulo
+        createdAt
+        featuredImage {
+          url
+        }
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query, { slug });
+  const { post } = result;
+  return post;
 }

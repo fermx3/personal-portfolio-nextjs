@@ -1,33 +1,48 @@
 import Link from 'next/link';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
-import ButtonGroup from '@/components/homePage/portfolio/categories-group';
-import ProyectoCard from './proyecto-card';
+import ButtonGroup from '@/components/portfolio/categories-group';
+import ProyectoCard from '@/components/card/proyecto-card';
 
 import classes from './proyecto-item.module.css';
 import ProyectoImagen from './proyecto-imagen';
 import ProyectoLinks from './proyecto-links';
 
-const ProyectoItem = ({ proyecto, detalles }) => {
-  const { titulo, subtitulo, tecnologias, slug, desc, github, website } =
-    proyecto;
+const ProyectoItem = ({ proyecto, fullCard }) => {
+  const {
+    titulo,
+    subtitulo,
+    tecnologias,
+    slug,
+    desc,
+    github,
+    website,
+    featuredImage,
+  } = proyecto;
 
   let descripcion = desc.markdown;
+  let imageUrl;
 
-  if (!detalles) {
+  if (featuredImage) {
+    imageUrl = featuredImage.url;
+  } else {
+    imageUrl = `/images/proyectos/${slug}.png`;
+  }
+
+  if (!fullCard) {
     descripcion = desc.markdown.slice(0, 300) + '...';
   }
 
   return (
-    <ProyectoCard detalles={detalles}>
+    <ProyectoCard fullCard={fullCard}>
       <ProyectoImagen
-        slug={slug}
+        imageUrl={imageUrl}
         alt={titulo}
-        detalles={detalles}
-        priority={detalles}
+        fullCard={fullCard}
+        priority={fullCard}
       />
       <div
-        className={`${classes.contenido} ${detalles && classes.contenidoFull}`}
+        className={`${classes.contenido} ${fullCard && classes.contenidoFull}`}
       >
         <header className={classes.header}>
           <Link href={`/portafolio/${slug}`}>
@@ -35,7 +50,7 @@ const ProyectoItem = ({ proyecto, detalles }) => {
             <h4>{subtitulo}</h4>
           </Link>
         </header>
-        <ButtonGroup buttons={tecnologias} />
+        {tecnologias && <ButtonGroup buttons={tecnologias} />}
         <div className={classes.descripcion}>
           <ReactMarkdown>{descripcion}</ReactMarkdown>
         </div>
@@ -44,7 +59,7 @@ const ProyectoItem = ({ proyecto, detalles }) => {
           github={github}
           website={website}
           titulo={titulo}
-          detalles={detalles}
+          fullCard={fullCard}
         />
       </div>
     </ProyectoCard>
