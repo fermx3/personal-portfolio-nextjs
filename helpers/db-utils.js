@@ -189,8 +189,8 @@ export async function getAllPosts() {
         titulo
         featuredImage {
           url
-          createdAt
         }
+        createdAt
       }
     }
   `;
@@ -228,6 +228,7 @@ export async function getPostDetails(slug) {
         featuredImage {
           url
         }
+        createdAt
       }
     }
   `;

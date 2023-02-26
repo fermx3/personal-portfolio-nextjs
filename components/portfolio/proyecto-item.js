@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 import ButtonGroup from '@/components/portfolio/categories-group';
 import ProyectoCard from '@/components/card/proyecto-card';
+import ProyectoLinks from './proyecto-links';
+import ProyectoImagen from './proyecto-imagen';
 
 import classes from './proyecto-item.module.css';
-import ProyectoImagen from './proyecto-imagen';
-import ProyectoLinks from './proyecto-links';
 
 const ProyectoItem = ({ proyecto, fullCard }) => {
   const {
@@ -18,10 +19,12 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
     github,
     website,
     featuredImage,
+    createdAt,
   } = proyecto;
 
   let descripcion = desc.markdown;
   let imageUrl;
+  let date;
 
   if (featuredImage) {
     imageUrl = featuredImage.url;
@@ -31,6 +34,14 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
 
   if (!fullCard) {
     descripcion = desc.markdown.slice(0, 300) + '...';
+  }
+
+  if (createdAt) {
+    date = new Date(createdAt).toLocaleDateString('es-MX', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
   }
 
   return (
@@ -47,7 +58,8 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
         <header className={classes.header}>
           <Link href={website ? `/portafolio/${slug}` : `/blog/${slug}`}>
             <h3>{titulo}</h3>
-            <h4>{subtitulo}</h4>
+            {subtitulo && <h4>{subtitulo}</h4>}
+            {createdAt && <p>{date}</p>}
           </Link>
         </header>
         {tecnologias && <ButtonGroup buttons={tecnologias} />}

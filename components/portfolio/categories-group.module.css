@@ -2,4 +2,5 @@
   display: flex;
   flex-wrap: wrap;
   gap: calc(var(--size-0) / 2);
+  margin-bottom: var(--size-2);
 }

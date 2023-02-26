@@ -16,8 +16,14 @@
   color: var(--color-3);
 }
 
+.header p {
+  color: var(--color-4);
+  margin-top: var(--size-1);
+  font-size: var(--size-1);
+}
+
 .contenido .descripcion {
-  margin-top: var(--size-5);
+  margin-top: var(--size-2);
 }
 
 .descripcion h4 {
