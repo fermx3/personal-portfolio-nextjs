@@ -5,7 +5,8 @@ import { GTM_ID } from '@/helpers/gtag';
 export default function Document() {
   return (
     <Html lang='es'>
-      <Head>
+      <Head />
+      <body>
         <noscript>
           <img
             height='1'
@@ -22,8 +23,6 @@ export default function Document() {
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-      </Head>
-      <body>
         <Main />
         <NextScript />
       </body>
