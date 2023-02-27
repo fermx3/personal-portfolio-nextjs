@@ -1,20 +1,19 @@
+import Script from 'next/script';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import { Analytics } from '@vercel/analytics/react';
-import TagManager from 'react-gtm-module';
 import * as fbq from '../helpers/fbpixel';
+import { GTM_ID, pageview } from '../helpers/gtag';
 
 import Layout from '@/components/layout/layout';
 
 import '@/styles/globals.css';
-import Script from 'next/script';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    TagManager.initialize({ gtmlId: process.env.GTM_ID });
     // This pageview only triggers the first time (it's important for Pixel to have real information)
     fbq.pageview();
 
@@ -23,13 +22,16 @@ export default function App({ Component, pageProps }) {
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('routeChangeComplete', pageview);
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('routeChangeComplete', pageview);
     };
   }, [router.events]);
 
   return (
     <Layout>
+      {/* Facebook Pixel - base code */}
       <Script
         id='fb-pixel'
         strategy='afterInteractive'
@@ -44,6 +46,20 @@ export default function App({ Component, pageProps }) {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', ${fbq.FB_PIXEL_ID});
+          `,
+        }}
+      />
+      {/* Google Tag Manager - Global base code */}
+      <Script
+        id='gtag-base'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', '${GTM_ID}');
           `,
         }}
       />
