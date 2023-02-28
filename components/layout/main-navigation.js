@@ -3,11 +3,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { useEffect, useState } from 'react';
+import HamburguerIcon from '../ui/hamburguer-icon';
 
 import classes from './main-navigation.module.css';
 
 const MainNavigation = ({ font }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [opened, setOpened] = useState(false);
 
   const { pathname } = useRouter();
 
@@ -19,6 +21,11 @@ const MainNavigation = ({ font }) => {
     } else {
       setScrolled(false);
     }
+  };
+
+  const handleClick = () => {
+    setOpened(!opened);
+    console.log('Pressed');
   };
 
   useEffect(() => {
@@ -37,12 +44,21 @@ const MainNavigation = ({ font }) => {
           height={284 / 14}
         />
       </Link>
-      {/* Insert mobile menu */}
+      <HamburguerIcon handleClick={handleClick} opened={opened} />
+      <div className={`${classes.navMobileMenu} ${opened && classes.opened}`}>
+        <div>
+          <Link href={pathname !== '/' ? '/portafolio' : '/#portafolio'}>
+            Portafolio
+          </Link>
+          <Link href='/blog'>Blog</Link>
+          <Link href='/#contacto'>Contacto</Link>
+        </div>
+      </div>
       <div className={classes.navMenu}>
         <Link href={pathname !== '/' ? '/portafolio' : '/#portafolio'}>
           Portafolio
         </Link>
-        {/* <Link href='/blog'>Blog</Link> */}
+        <Link href='/blog'>Blog</Link>
         <Link href='/#contacto'>Contacto</Link>
       </div>
     </div>

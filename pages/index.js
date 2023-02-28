@@ -4,10 +4,11 @@ import Hero from '@/components/homePage/hero/hero';
 import SkillsSection from '@/components/homePage/skills/skills-section';
 import PortfolioSection from '@/components/portfolio/portfolio-section';
 import ContactSection from '@/components/homePage/contact/contact-section';
-import { getFeaturedProyectos } from '@/helpers/db-utils';
+import { getAllPosts, getFeaturedProyectos } from '@/helpers/db-utils';
 import MetaTags from '@/components/head/meta-tags';
+import BlogSection from '@/components/blog/blog-section';
 
-export default function Home({ proyectos }) {
+export default function Home({ proyectos, posts }) {
   return (
     <>
       <Head>
@@ -23,6 +24,7 @@ export default function Home({ proyectos }) {
       {/* Inyectar aquí navbar con un div en el documento? */}
       <SkillsSection />
       <PortfolioSection proyectos={proyectos} />
+      <BlogSection proyectos={posts} />
       <ContactSection />
     </>
   );
@@ -30,10 +32,12 @@ export default function Home({ proyectos }) {
 
 export const getStaticProps = async () => {
   const featuredProyectos = await getFeaturedProyectos();
+  const posts = await getAllPosts();
 
   return {
     props: {
       proyectos: featuredProyectos,
+      posts,
     },
     revalidate: 3600,
   };

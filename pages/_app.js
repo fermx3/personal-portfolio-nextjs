@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Analytics } from '@vercel/analytics/react';
 import * as fbq from '../helpers/fbpixel';
-import { GTM_ID, pageview } from '@/helpers/gtag';
+import { pageview } from '@/helpers/gtag';
 
 import Layout from '@/components/layout/layout';
 
@@ -28,9 +28,6 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', pageview);
     };
   }, [router.events]);
-
-  console.log(fbq.FB_PIXEL_ID);
-  console.log(GTM_ID);
 
   return (
     <Layout>
