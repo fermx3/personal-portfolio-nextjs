@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { FB_PIXEL_ID } from '../helpers/fbpixel';
+import { FB_PIXEL_ID } from '@/helpers/fbpixel';
 import { GTM_ID } from '@/helpers/gtag';
 
 export default function Document() {

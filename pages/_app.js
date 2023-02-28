@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Analytics } from '@vercel/analytics/react';
 import * as fbq from '../helpers/fbpixel';
-import { GTM_ID, pageview } from '../helpers/gtag';
+import { GTM_ID, pageview } from '@/helpers/gtag';
 
 import Layout from '@/components/layout/layout';
 
@@ -29,6 +29,9 @@ export default function App({ Component, pageProps }) {
     };
   }, [router.events]);
 
+  console.log(fbq.FB_PIXEL_ID);
+  console.log(GTM_ID);
+
   return (
     <Layout>
       {/* Facebook Pixel - base code */}
@@ -45,7 +48,7 @@ export default function App({ Component, pageProps }) {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', ${fbq.FB_PIXEL_ID});
+            fbq('init', '335415437076372');
           `,
         }}
       />
@@ -59,7 +62,7 @@ export default function App({ Component, pageProps }) {
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer', '${GTM_ID}');
+            })(window,document,'script','dataLayer', 'G-RZZTBZZL0G');
           `,
         }}
       />
