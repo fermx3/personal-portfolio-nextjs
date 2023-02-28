@@ -47,11 +47,18 @@ const MainNavigation = ({ font }) => {
       <HamburguerIcon handleClick={handleClick} opened={opened} />
       <div className={`${classes.navMobileMenu} ${opened && classes.opened}`}>
         <div>
-          <Link href={pathname !== '/' ? '/portafolio' : '/#portafolio'}>
+          <Link
+            href={pathname !== '/' ? '/portafolio' : '/#portafolio'}
+            onClick={handleClick}
+          >
             Portafolio
           </Link>
-          <Link href='/blog'>Blog</Link>
-          <Link href='/#contacto'>Contacto</Link>
+          <Link href='/blog' onClick={handleClick}>
+            Blog
+          </Link>
+          <Link href='/#contacto' onClick={handleClick}>
+            Contacto
+          </Link>
         </div>
       </div>
       <div className={classes.navMenu}>
