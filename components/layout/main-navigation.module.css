@@ -48,6 +48,8 @@
   height: 100vh;
   top: 0;
   right: 0;
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
 }
 
 .navMobileMenu > div > a {

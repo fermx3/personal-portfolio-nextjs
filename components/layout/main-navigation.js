@@ -25,7 +25,6 @@ const MainNavigation = ({ font }) => {
 
   const handleClick = () => {
     setOpened(!opened);
-    console.log('Pressed');
   };
 
   useEffect(() => {
