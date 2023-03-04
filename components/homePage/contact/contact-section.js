@@ -1,5 +1,4 @@
 import ContactForm from './contact-form';
-import Icon from '../../images/icon';
 
 import classes from './contact-section.module.css';
 import Button from '@/components/ui/button';

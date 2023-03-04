@@ -28,6 +28,7 @@
 
 .descripcion h4 {
   margin: var(--size-1) 0;
+  font-size: var(--size-3);
 }
 
 .descripcion p {
@@ -36,6 +37,11 @@
 
 .descripcion a {
   color: var(--color-3);
+}
+
+.descripcion ul {
+  padding: var(--size-3) 0;
+  padding-left: var(--size-5);
 }
 
 .contenidoFull {

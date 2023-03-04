@@ -1,4 +1,4 @@
-import FormNotification from '@/components/layout/form-notification';
+import FormNotification from '@/components/ui/form-notification';
 import Loader from '@/components/ui/loader';
 import { Fragment, useState } from 'react';
 
