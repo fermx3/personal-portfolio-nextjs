@@ -180,7 +180,7 @@ export async function getProyectoDetails(slug) {
 export async function getAllPosts() {
   const query = gql`
     query getAllPosts {
-      posts(orderBy: publishedAt_DESC) {
+      posts(orderBy: createdAt_DESC) {
         desc {
           markdown
         }
