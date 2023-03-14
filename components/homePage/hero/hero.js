@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Icon from '../../images/icon';
+import Icon from '../../icon/icon';
 import Button from '../../ui/button';
 
 import classes from './hero.module.css';

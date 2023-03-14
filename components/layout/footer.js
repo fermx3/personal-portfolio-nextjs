@@ -3,9 +3,9 @@ import Image from 'next/image';
 import SocialIcons from '../homePage/contact/social-icons';
 import classes from './footer.module.css';
 
-const year = new Date().getFullYear();
-
 const Footer = ({ font }) => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className={`${font} ${classes.footer}`}>
       <div>

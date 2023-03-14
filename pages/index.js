@@ -1,12 +1,13 @@
 import Head from 'next/head';
 
+import MetaTags from '@/components/head/meta-tags';
 import Hero from '@/components/homePage/hero/hero';
 import SkillsSection from '@/components/homePage/skills/skills-section';
 import PortfolioSection from '@/components/portfolio/portfolio-section';
-import ContactSection from '@/components/homePage/contact/contact-section';
-import { getAllPosts, getFeaturedProyectos } from '@/helpers/db-utils';
-import MetaTags from '@/components/head/meta-tags';
 import BlogSection from '@/components/blog/blog-section';
+import ContactSection from '@/components/homePage/contact/contact-section';
+
+import { getAllPosts, getFeaturedProyectos } from '@/helpers/db-utils';
 
 export default function Home({ proyectos, posts }) {
   return (

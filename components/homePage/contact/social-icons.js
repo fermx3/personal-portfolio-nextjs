@@ -1,4 +1,4 @@
-import Icon from '@/components/images/icon';
+import Icon from '@/components/icon/icon';
 
 import classes from './social-icons.module.css';
 

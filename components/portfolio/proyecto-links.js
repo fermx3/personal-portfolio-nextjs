@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Icon from '@/components/images/icon';
+import Icon from '@/components/icon/icon';
 import Button from '@/components/ui/button';
 
 import classes from './proyecto-links.module.css';
