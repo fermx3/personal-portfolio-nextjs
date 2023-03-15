@@ -76,7 +76,6 @@ const MainNavigation = ({ font }) => {
         </div>
       </div>
       <div
-        id='mobileMenu'
         className={`${font} ${classes.navMobileMenu} ${
           animateOut && classes.animateOut
         } ${opened && classes.opened} `}

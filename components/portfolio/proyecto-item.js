@@ -46,12 +46,14 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
 
   return (
     <ProyectoCard fullCard={fullCard}>
+      {/* <Link href={website ? `/portafolio/${slug}` : `/blog/${slug}`}> */}
       <ProyectoImagen
         imageUrl={imageUrl}
         alt={titulo}
         fullCard={fullCard}
         priority={fullCard}
       />
+      {/* </Link> */}
       <div
         className={`${classes.contenido} ${fullCard && classes.contenidoFull}`}
       >

@@ -29,7 +29,7 @@ const SkillsSection = () => {
           src='/images/icons/frameworks-react.svg'
           titulo='Frameworks y Bibliotecas'
           p1='Soy experto en el uso de frameworks y bibliotecas populares como
-          Next.js, React.js y WordPress, lo que me permite crear soluciones web
+          Next.js y React.js así como el CMS WordPress, lo que me permite crear soluciones web
           escalables y personalizadas para mis clientes.'
           p2='Además, siempre estoy actualizado con las últimas tendencias
           tecnológicas para mejorar mi habilidad y brindar soluciones de alta
