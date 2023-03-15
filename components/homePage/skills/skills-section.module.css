@@ -3,14 +3,12 @@
   gap: var(--size-4);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   justify-content: center;
-  padding: var(--size-7);
+  padding: 0 var(--size-7);
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 @media (max-width: 769px) {
   .skills {
-    padding: var(--size-7) var(--size-4);
+    padding: 0 var(--size-4);
   }
 }

@@ -3,10 +3,11 @@ import ContactForm from './contact-form';
 import classes from './contact-section.module.css';
 import Button from '@/components/ui/button';
 import SocialIcons from './social-icons';
+import Section from '@/components/layout/section';
 
 const ContactSection = () => {
   return (
-    <section id='contacto' className={classes.contacto}>
+    <Section id='contacto' className={classes.contacto}>
       <div className={classes.contactHeader}>
         <h2>Cómo sería tu web ideal?</h2>
         <h3>Cuentame para hacerla realidad.</h3>
@@ -18,7 +19,7 @@ const ContactSection = () => {
         <SocialIcons whiteOnDarkTheme />
       </div>
       <ContactForm />
-    </section>
+    </Section>
   );
 };
 

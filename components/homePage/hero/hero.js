@@ -4,6 +4,30 @@ import Button from '../../ui/button';
 
 import classes from './hero.module.css';
 
+const skills = [
+  {
+    icon: '/images/icons/languajes/nextjs.svg',
+    name: 'next.js',
+    level: 'Intermedio',
+    whiteOnDarkTheme: true,
+  },
+  {
+    icon: '/images/icons/languajes/react.svg',
+    name: 'react.js',
+    level: 'Intermedio',
+  },
+  {
+    icon: '/images/icons/languajes/javascript.svg',
+    name: 'JavaScript',
+    level: 'Avanzado',
+  },
+  {
+    icon: '/images/icons/languajes/wordpress.svg',
+    name: 'WordPress',
+    level: 'Avanzado',
+  },
+];
+
 const Hero = () => {
   return (
     <header className={classes.hero}>
@@ -21,27 +45,15 @@ const Hero = () => {
           línea.
         </p>
         <div className={classes.icons}>
-          <Icon
-            src='/images/icons/languajes/nextjs.svg'
-            caption='next.js'
-            nivel='Intermedio'
-            whiteOnDarkTheme
-          />
-          <Icon
-            src='/images/icons/languajes/react.svg'
-            caption='react.js'
-            nivel='Intermedio'
-          />
-          <Icon
-            src='/images/icons/languajes/javascript.svg'
-            caption='JavaScript'
-            nivel='Avanzado'
-          />
-          <Icon
-            src='/images/icons/languajes/wordpress.svg'
-            caption='WordPress'
-            nivel='Avanzado'
-          />
+          {skills.map((skill) => (
+            <Icon
+              key={skill.name}
+              src={skill.icon}
+              caption={skill.name}
+              nivel={skill.level}
+              whiteOnDarkTheme={skill.whiteOnDarkTheme}
+            />
+          ))}
         </div>
         <Button href='/#portafolio'>Explora mi trabajo</Button>
       </div>

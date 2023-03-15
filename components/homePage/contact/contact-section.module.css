@@ -1,20 +1,12 @@
-.contacto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-  padding: var(--size-7) 0;
-}
-
 .contactHeader {
   margin-bottom: var(--size-2);
   padding: 0 var(--size-0);
+  text-align: center;
 }
 
 .contactHeader h2 {
   filter: drop-shadow(0px 0px 10px rgba(var(--shadow-pic-color), 0.3));
+  margin-bottom: 0;
 }
 
 .contactHeader h3 {
