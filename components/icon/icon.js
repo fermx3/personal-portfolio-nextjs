@@ -1,31 +1,25 @@
 import Image from 'next/image';
 
-import classes from './icon.module.css';
+import classes from './icons.module.css';
 
-const Icon = ({ src, alt, caption, nivel, whiteOnDarkTheme }) => {
-  if (!caption) {
-    return (
-      <div
-        className={`${classes.icon} ${
-          whiteOnDarkTheme && classes.whiteOnDarkTheme
-        }`}
-      >
-        <Image src={src} alt={alt} width={30} height={30} />
-      </div>
-    );
-  }
+export const ICON_SIZE_CLASSES = {
+  base: 'base',
+  small: 'small',
+};
 
-  return (
-    <figure
-      className={`${classes.icon} ${
-        whiteOnDarkTheme && classes.whiteOnDarkTheme
-      }`}
-    >
-      <Image src={src} alt={caption} width={30} height={30} />
-      <figcaption>{caption}</figcaption>
-      <p>{nivel}</p>
-    </figure>
-  );
+const getIconSize = (iconSize = ICON_SIZE_CLASSES.base) =>
+  ({
+    [ICON_SIZE_CLASSES.base]: 30,
+    [ICON_SIZE_CLASSES.small]: 15,
+  }[iconSize]);
+
+const Icon = ({ src, alt, iconSize }) => {
+  <Image
+    src={src}
+    alt={alt}
+    width={getIconSize(iconSize)}
+    height={getIconSize(iconSize)}
+  />;
 };
 
 export default Icon;
