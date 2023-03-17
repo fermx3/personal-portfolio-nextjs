@@ -1,0 +1,19 @@
+.icon {
+  text-align: center;
+  margin: 0 var(--size-0) 0;
+
+  figcaption {
+    font-size: var(--size-1);
+    margin-top: -0.75rem;
+  }
+
+  p {
+    font-size: var(--size-0);
+  }
+}
+
+.whiteOnDarkTheme {
+  img {
+    filter: var(--invert-percentage);
+  }
+}

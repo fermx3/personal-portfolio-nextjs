@@ -8,7 +8,7 @@ import { pageview } from '@/helpers/gtag';
 
 import Layout from '@/components/layout/layout';
 
-import '@/styles/globals.css';
+import '@/styles/globals.scss';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();

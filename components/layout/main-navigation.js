@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Fragment, useEffect, useState } from 'react';
 import SocialIcons from '../homePage/contact/social-icons';
+import Icon, { ICON_SIZE_CLASSES } from '../icon/icon';
 import HamburguerIcon from '../ui/hamburguer-icon';
 
 import classes from './main-navigation.module.css';
@@ -83,11 +84,11 @@ const MainNavigation = ({ font }) => {
         <div className={classes.navBarLinks}>
           {links.map(({ name, slug }) => (
             <Link key={name} href={`/${slug}`} onClick={handleClick}>
-              <Image
+              <Icon
                 src={`/images/icons/menu/${name.toLowerCase()}.svg`}
                 alt={`${name} icon`}
-                width={25}
-                height={25}
+                iconSize={ICON_SIZE_CLASSES.small}
+                whiteOnDarkTheme
               />
               {name}
             </Link>

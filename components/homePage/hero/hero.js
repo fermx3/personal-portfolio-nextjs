@@ -1,3 +1,4 @@
+import IconCaption from '@/components/icon/icon-caption';
 import Image from 'next/image';
 import Icon from '../../icon/icon';
 import Button from '../../ui/button';
@@ -46,13 +47,17 @@ const Hero = () => {
         </p>
         <div className={classes.icons}>
           {skills.map((skill) => (
-            <Icon
+            <IconCaption
               key={skill.name}
-              src={skill.icon}
               caption={skill.name}
               nivel={skill.level}
-              whiteOnDarkTheme={skill.whiteOnDarkTheme}
-            />
+            >
+              <Icon
+                src={skill.icon}
+                alt={skill.name}
+                whiteOnDarkTheme={skill.whiteOnDarkTheme}
+              />
+            </IconCaption>
           ))}
         </div>
         <Button href='/#portafolio'>Explora mi trabajo</Button>
