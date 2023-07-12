@@ -44,6 +44,8 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
     });
   }
 
+  console.log(imageUrl);
+
   return (
     <ProyectoCard fullCard={fullCard}>
       {/* <Link href={website ? `/portafolio/${slug}` : `/blog/${slug}`}> */}
