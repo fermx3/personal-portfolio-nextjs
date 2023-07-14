@@ -62,7 +62,10 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
         />
       </Head>
       <h1>{`Proyectos realizados con: ${listOfTags}`}</h1>
-      <CardGrid proyectos={proyectos} />
+      <Button href={'/portafolio'} type={'borrar-filtros-btn'}>
+        Borrar Filtros
+      </Button>
+      <CardGrid proyectos={proyectos} query={query} />
       {noMoreProyectos && (
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
       )}

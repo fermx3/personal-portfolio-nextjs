@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 import ButtonGroup from '@/components/portfolio/categories-group';
@@ -9,7 +8,7 @@ import ProyectoImagen from './proyecto-imagen';
 
 import classes from './proyecto-item.module.css';
 
-const ProyectoItem = ({ proyecto, fullCard }) => {
+const ProyectoItem = ({ proyecto, fullCard, query }) => {
   const {
     titulo,
     subtitulo,
@@ -44,6 +43,8 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
     });
   }
 
+  console.log(imageUrl);
+
   return (
     <ProyectoCard fullCard={fullCard}>
       {/* <Link href={website ? `/portafolio/${slug}` : `/blog/${slug}`}> */}
@@ -64,7 +65,7 @@ const ProyectoItem = ({ proyecto, fullCard }) => {
             {createdAt && <p>{date}</p>}
           </Link>
         </header>
-        {tecnologias && <ButtonGroup buttons={tecnologias} />}
+        {tecnologias && <ButtonGroup buttons={tecnologias} query={query} />}
         <div className={classes.descripcion}>
           <ReactMarkdown>{descripcion}</ReactMarkdown>
         </div>
