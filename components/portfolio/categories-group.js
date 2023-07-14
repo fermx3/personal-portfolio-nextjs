@@ -17,8 +17,13 @@ const CategoriesGroup = ({ buttons, query }) => {
 
   const handleClick = (tecnologia) => {
     tags = tags.filter((tag) => tag !== tecnologia);
-    const URL = tags.join('/');
-    router.push(`/portafolio/filtro/${URL}`);
+
+    if (tags.length === 0) {
+      router.push('/portafolio');
+    } else {
+      const URL = tags.join('/');
+      router.push(`/portafolio/filtro/${URL}`);
+    }
   };
 
   return (
