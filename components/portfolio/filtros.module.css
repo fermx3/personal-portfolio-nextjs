@@ -1,0 +1,8 @@
+.filtros {
+  text-align: center;
+  padding: 0 var(--size-0);
+}
+
+.filtros h4 {
+  margin-bottom: 1rem;
+}

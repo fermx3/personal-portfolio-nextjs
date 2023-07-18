@@ -237,3 +237,27 @@ export async function getPostDetails(slug) {
   const { post } = result;
   return post;
 }
+
+export async function getTecnologias() {
+  const query = gql`
+    query getTecnologias {
+      __type(name: "Tecnologias") {
+        enumValues {
+          name
+        }
+      }
+    }
+  `;
+
+  const result = await request(hygraphAPI, query);
+  const { __type } = result;
+
+  const tecnologias = [];
+
+  for (var index in __type.enumValues) {
+    var item = __type.enumValues[index];
+    tecnologias.push(item.name);
+  }
+
+  return tecnologias;
+}

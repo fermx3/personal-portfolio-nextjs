@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import { getAllProyectos } from '@/helpers/db-utils';
+import { getAllProyectos, getTecnologias } from '@/helpers/db-utils';
 
 import CardGrid from '@/components/portfolio/card-grid';
 import Button from '@/components/ui/button';
@@ -11,6 +11,7 @@ import Loader from '@/components/ui/loader';
 import MetaTags from '@/components/head/meta-tags';
 
 import classes from '../../styles/section.module.css';
+import Filtros from '@/components/portfolio/filtros';
 
 const Portafolio = (props) => {
   const [proyectos, setProyectos] = useState(props.proyectos);
@@ -43,7 +44,10 @@ const Portafolio = (props) => {
   //
 
   return (
-    <section className={classes.section}>
+    <section
+      className={classes.section}
+      style={{ display: 'flex', 'flex-direction': 'column' }}
+    >
       <Head>
         <title>Portafolio de proyectos web | Webloom</title>
         <MetaTags
@@ -53,6 +57,7 @@ const Portafolio = (props) => {
         />
       </Head>
       <h1>Portafolio</h1>
+      <Filtros tecnologias={props.tecnologias} />
       <CardGrid proyectos={proyectos} />
       {noMoreProyectos && (
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
@@ -69,10 +74,12 @@ export default Portafolio;
 
 export const getStaticProps = async () => {
   const proyectos = await getAllProyectos();
+  const tecnologias = await getTecnologias();
 
   return {
     props: {
       proyectos,
+      tecnologias,
     },
     revalidate: 3600,
   };

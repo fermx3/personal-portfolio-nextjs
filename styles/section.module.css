@@ -1,6 +1,8 @@
 .section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 1200px), 1fr));
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 1200px), 1fr)); */
   align-items: center;
   justify-items: center;
   margin-bottom: var(--size-7);

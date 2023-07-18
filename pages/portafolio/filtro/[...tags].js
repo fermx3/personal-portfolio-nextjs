@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import { getFilteredProyectos } from '@/helpers/db-utils';
+import { getFilteredProyectos, getTecnologias } from '@/helpers/db-utils';
 
 import MetaTags from '@/components/head/meta-tags';
 import CardGrid from '@/components/portfolio/card-grid';
@@ -11,8 +11,9 @@ import Loader from '@/components/ui/loader';
 import Button from '@/components/ui/button';
 
 import classes from '../../../styles/section.module.css';
+import Filtros from '@/components/portfolio/filtros';
 
-const FiltroPage = ({ filteredProyectos, tags }) => {
+const FiltroPage = ({ filteredProyectos, tags, tecnologias }) => {
   const [proyectos, setProyectos] = useState(filteredProyectos);
   const [noMoreProyectos, setNoMoreProyectos] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -62,10 +63,15 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
         />
       </Head>
       <h1>{`Proyectos realizados con: ${listOfTags}`}</h1>
+      <Filtros tecnologias={tecnologias} query={query} />
       <Button href={'/portafolio'} type={'borrar-filtros-btn'}>
         Borrar Filtros
       </Button>
-      <CardGrid proyectos={proyectos} query={query} />
+      {proyectos.length === 0 ? (
+        <Notificacion>No hay proyectos en esta categoria.</Notificacion>
+      ) : (
+        <CardGrid proyectos={proyectos} query={query} />
+      )}
       {noMoreProyectos && (
         <Notificacion>No hay más proyectos que mostrar.</Notificacion>
       )}
@@ -82,6 +88,7 @@ const FiltroPage = ({ filteredProyectos, tags }) => {
 export default FiltroPage;
 
 export const getStaticProps = async (context) => {
+  const tecnologias = await getTecnologias();
   const { tags } = context.params;
 
   let filteredProyectos;
@@ -96,6 +103,7 @@ export const getStaticProps = async (context) => {
     props: {
       filteredProyectos,
       tags,
+      tecnologias,
     },
     revalidate: 3600,
   };
