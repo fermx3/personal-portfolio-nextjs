@@ -96,6 +96,7 @@ export const getStaticProps = async (context) => {
   try {
     filteredProyectos = await getFilteredProyectos(tags);
   } catch (error) {
+    console.log('notFound');
     return { notFound: true };
   }
 
