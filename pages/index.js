@@ -2,14 +2,15 @@ import Head from 'next/head';
 
 import MetaTags from '@/components/head/meta-tags';
 import Hero from '@/components/homePage/hero/hero';
+/*
 import SkillsSection from '@/components/homePage/skills/skills-section';
 import PortfolioSection from '@/components/portfolio/portfolio-section';
 import BlogSection from '@/components/blog/blog-section';
 import ContactSection from '@/components/homePage/contact/contact-section';
 
-import { getAllPosts, getFeaturedProyectos } from '@/helpers/db-utils';
+import { getAllPosts, getFeaturedProyectos } from '@/helpers/db-utils';*/
 
-export default function Home({ proyectos, posts }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -31,6 +32,7 @@ export default function Home({ proyectos, posts }) {
   );
 }
 
+/*
 export const getStaticProps = async () => {
   const featuredProyectos = await getFeaturedProyectos();
   const posts = await getAllPosts();
@@ -40,6 +42,6 @@ export const getStaticProps = async () => {
       proyectos: featuredProyectos,
       posts,
     },
-    revalidate: 3600,
+   revalidate: 3600,
   };
-};
+};*/
