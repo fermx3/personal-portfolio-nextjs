@@ -22,11 +22,11 @@ export default function Home({ proyectos, posts }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Hero />
-      {/* Inyectar aquí navbar con un div en el documento? */}
+      {/* Inyectar aquí navbar con un div en el documento?
       <SkillsSection />
       <PortfolioSection proyectos={proyectos} />
       <BlogSection proyectos={posts} />
-      <ContactSection />
+      <ContactSection /> */}
     </>
   );
 }
