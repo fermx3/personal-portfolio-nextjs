@@ -60,7 +60,7 @@ const Hero = () => {
             </IconCaption>
           ))}
         </div>
-        <Button href='/#portafolio'>Explora mi trabajo</Button>
+        {/*<Button href='/#portafolio'>Explora mi trabajo</Button>*/}
       </div>
       <div className={classes.profileImage}>
         <div className={classes.blob}></div>
