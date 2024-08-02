@@ -10,13 +10,13 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 
 const Layout = ({ children }) => {
   return (
-    <Fragment>
+    <div className={classes.layout}>
     {/* <MainNavigation font={montserrat.className} /> */}
       <main className={`${montserrat.className} ${classes.main}`}>
         {children}
       </main>
       <Footer font={montserrat.className} />
-    </Fragment>
+    </div>
   );
 };
 
